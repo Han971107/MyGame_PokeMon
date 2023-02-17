@@ -1,4 +1,6 @@
 #include "pokeRed.h"
+#include "pokeTime.h"
+#include "pokeSceneManager.h"
 
 
 namespace poke
@@ -24,22 +26,22 @@ namespace poke
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
-			mPos.x -= 0.01f;
+			mPos.x -= 100.0f * Time::DeltaTime();
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 		{
-			mPos.x += 0.01f;
+			mPos.x += 100.0f * Time::DeltaTime();
 		}
 
 		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
-			mPos.y -= 0.01f;
+			mPos.y -= 100.0f * Time::DeltaTime();
 		}
 
 		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
-			mPos.y += 0.01f;
+			mPos.y += 100.0f * Time::DeltaTime();
 		}
 	}
 

@@ -106,6 +106,9 @@
     <ClInclude Include="pokeRed.h">
       <Filter>Contents\Player</Filter>
     </ClInclude>
+    <ClInclude Include="pokeTime.h">
+      <Filter>Engine\Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -140,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="pokeRed.cpp">
       <Filter>Contents\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeTime.cpp">
+      <Filter>Engine\Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

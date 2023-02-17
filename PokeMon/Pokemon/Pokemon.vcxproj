@@ -144,6 +144,7 @@
     <ClInclude Include="pokeRed.h" />
     <ClInclude Include="pokeScene.h" />
     <ClInclude Include="pokeSceneManager.h" />
+    <ClInclude Include="pokeTime.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClCompile Include="pokeRed.cpp" />
     <ClCompile Include="pokeScene.cpp" />
     <ClCompile Include="pokeSceneManager.cpp" />
+    <ClCompile Include="pokeTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc" />
