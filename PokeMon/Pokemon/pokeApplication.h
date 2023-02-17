@@ -1,6 +1,7 @@
 #pragma once
 #include "MergeEngine.h"
 
+
 namespace poke
 {
 	class Application
@@ -21,4 +22,3 @@ namespace poke
 		Vector2 mPos;
 	};
 }
-
