@@ -1,6 +1,7 @@
 #include "pokeApplication.h"
 #include "pokeSceneManager.h"
 #include "pokeTime.h"
+#include "pokeInput.h"
 
 
 namespace poke
@@ -23,6 +24,7 @@ namespace poke
 		mHdc = GetDC(hWnd);
 
 		Time::Initialize();
+		Input::Initialize();
 		SceneManager::Initialize();
 	}
 
@@ -35,12 +37,14 @@ namespace poke
 	void Application::Update()
 	{
 		Time::Update();
+		Input::Update();
 		SceneManager::Update();
 	}
 
 	void Application::Render()
 	{
 		Time::Render(mHdc);
+		Input::Render(mHdc);
 		SceneManager::Render(mHdc);
 	}
 }

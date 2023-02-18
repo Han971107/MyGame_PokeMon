@@ -53,6 +53,9 @@
     <Filter Include="Contents\Scene\IntroScene">
       <UniqueIdentifier>{6fc625bb-1f8a-4920-9c9f-b548172699af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{b6442ef1-cc19-4786-b5fc-f7d02fa71f36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -109,6 +112,7 @@
     <ClInclude Include="pokeTime.h">
       <Filter>Engine\Time</Filter>
     </ClInclude>
+    <ClInclude Include="pokeInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -147,6 +151,7 @@
     <ClCompile Include="pokeTime.cpp">
       <Filter>Engine\Time</Filter>
     </ClCompile>
+    <ClCompile Include="pokeInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc">

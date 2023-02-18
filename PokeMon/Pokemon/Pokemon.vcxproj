@@ -137,6 +137,7 @@
     <ClInclude Include="pokeEntity.h" />
     <ClInclude Include="pokeEnums.h" />
     <ClInclude Include="pokeGameObject.h" />
+    <ClInclude Include="pokeInput.h" />
     <ClInclude Include="pokeLayer.h" />
     <ClInclude Include="pokeMath.h" />
     <ClInclude Include="Pokemon.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="pokeComponent.cpp" />
     <ClCompile Include="pokeEntity.cpp" />
     <ClCompile Include="pokeGameObject.cpp" />
+    <ClCompile Include="pokeInput.cpp" />
     <ClCompile Include="pokeLayer.cpp" />
     <ClCompile Include="pokeMath.cpp" />
     <ClCompile Include="pokePlayScene.cpp" />
