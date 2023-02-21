@@ -52,9 +52,9 @@ namespace poke
 		// stock 오브젝트
 		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 0));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
-		//Rectangle(mHdc, -1, -1, 1601, 901);
+		//Rectangle(hdc, -1, -1, 1601, 901);
 
-		HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 255, 255));
+		HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 0, 255));
 		HPEN oldPen = (HPEN)SelectObject(hdc, pen);
 
 		Rectangle(hdc, mPos.x, mPos.y, mPos.x + 100, mPos.y + 100);

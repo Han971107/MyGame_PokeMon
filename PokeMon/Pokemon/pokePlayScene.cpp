@@ -15,8 +15,12 @@ namespace poke
 
 	void PlayScene::Initialize()
 	{
-		Red* red = new Red();
-		AddGameObject(red, eLayerType::Player);
+		for (int i = 0; i < 2; ++i) 
+		{
+			Red* red = new Red();
+			red->SetName(L"Player");
+			AddGameObject(red, eLayerType::Player);
+		}
 
 		Scene::Initialize();
 	}
