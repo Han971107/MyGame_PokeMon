@@ -10,7 +10,14 @@ namespace poke
 
 	Layer::~Layer()
 	{
+		for (GameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+				continue;
 
+			delete gameObj;
+			gameObj = nullptr;
+		}
 	}
 
 	void Layer::Initialize()
@@ -48,13 +55,7 @@ namespace poke
 
 	void Layer::Release()
 	{
-		for (GameObject* gameObj : mGameObjects)
-		{
-			if (gameObj == nullptr)
-				continue;
 
-			gameObj->Release();
-		}
 	}
 
 	void Layer::AddGameObject(GameObject* gameObj)

@@ -137,17 +137,20 @@
     <ClInclude Include="pokeEntity.h" />
     <ClInclude Include="pokeEnums.h" />
     <ClInclude Include="pokeGameObject.h" />
+    <ClInclude Include="pokeImage.h" />
     <ClInclude Include="pokeInput.h" />
     <ClInclude Include="pokeLayer.h" />
     <ClInclude Include="pokeMath.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="pokePlayScene.h" />
     <ClInclude Include="pokeRed.h" />
+    <ClInclude Include="pokeResourceManager.h" />
     <ClInclude Include="pokeScene.h" />
     <ClInclude Include="pokeSceneManager.h" />
     <ClInclude Include="pokeTime.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="pokeResource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -155,14 +158,17 @@
     <ClCompile Include="pokeComponent.cpp" />
     <ClCompile Include="pokeEntity.cpp" />
     <ClCompile Include="pokeGameObject.cpp" />
+    <ClCompile Include="pokeImage.cpp" />
     <ClCompile Include="pokeInput.cpp" />
     <ClCompile Include="pokeLayer.cpp" />
     <ClCompile Include="pokeMath.cpp" />
     <ClCompile Include="pokePlayScene.cpp" />
     <ClCompile Include="pokeRed.cpp" />
+    <ClCompile Include="pokeResourceManager.cpp" />
     <ClCompile Include="pokeScene.cpp" />
     <ClCompile Include="pokeSceneManager.cpp" />
     <ClCompile Include="pokeTime.cpp" />
+    <ClCompile Include="pokeResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc" />

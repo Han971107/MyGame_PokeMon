@@ -2,6 +2,7 @@
 #include "pokeTime.h"
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
+#include "pokeResourceManager.h"
 
 
 namespace poke
@@ -18,6 +19,7 @@ namespace poke
 
 	void Red::Initialize()
 	{
+		mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\Idle.bmp");
 		GameObject::Initialize();
 	}
 
@@ -49,20 +51,8 @@ namespace poke
 	void Red::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
-		// stock 오브젝트
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 0));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
-		//Rectangle(hdc, -1, -1, 1601, 901);
-
-		HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 0, 255));
-		HPEN oldPen = (HPEN)SelectObject(hdc, pen);
-
-		Rectangle(hdc, mPos.x, mPos.y, mPos.x + 100, mPos.y + 100);
-
-		SelectObject(hdc, oldPen);
-		DeleteObject(pen);
-		SelectObject(hdc, oldBrush);
-		DeleteObject(brush);
+		
+		BitBlt(hdc, mPos.x, mPos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
 	}
 
 	void Red::Release()

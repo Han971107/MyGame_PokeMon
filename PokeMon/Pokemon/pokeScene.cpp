@@ -5,6 +5,7 @@ namespace poke
 {
 	Scene::Scene()
 	{
+		mLayers.reserve(5);
 		mLayers.resize((UINT)eLayerType::End);
 	}
 

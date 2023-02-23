@@ -56,6 +56,12 @@
     <Filter Include="Engine\Input">
       <UniqueIdentifier>{b6442ef1-cc19-4786-b5fc-f7d02fa71f36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{ef625546-ecc3-4f9d-9623-caf8eff2d146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Image">
+      <UniqueIdentifier>{a09fbc3c-a449-4cc4-9186-6a0fc6f4c1a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -112,7 +118,18 @@
     <ClInclude Include="pokeTime.h">
       <Filter>Engine\Time</Filter>
     </ClInclude>
-    <ClInclude Include="pokeInput.h" />
+    <ClInclude Include="pokeInput.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeResource.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeResourceManager.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeImage.h">
+      <Filter>Engine\Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -151,7 +168,18 @@
     <ClCompile Include="pokeTime.cpp">
       <Filter>Engine\Time</Filter>
     </ClCompile>
-    <ClCompile Include="pokeInput.cpp" />
+    <ClCompile Include="pokeInput.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeResource.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeResourceManager.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeImage.cpp">
+      <Filter>Engine\Image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc">

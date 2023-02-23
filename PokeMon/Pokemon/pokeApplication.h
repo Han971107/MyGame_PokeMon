@@ -16,6 +16,7 @@ namespace poke
 		void Render();
 
 		HWND GetHwnd() { return mHwnd; }
+		HDC GetHdc() { return mHdc; }
 
 	private:
 		HWND mHwnd;

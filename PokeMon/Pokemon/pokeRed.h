@@ -1,6 +1,6 @@
 #pragma once
 #include "pokeGameObject.h"
-
+#include "pokeImage.h"
 
 namespace poke
 {
@@ -17,6 +17,6 @@ namespace poke
         virtual void Release() override;
 
     private:
-
+        Image* mImage;
     };
 }
