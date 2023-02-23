@@ -2,7 +2,7 @@
 #include "CommonInclude.h"
 #include "pokeApplication.h"
 
-extern poke::Application pokeApplication;
+extern poke::Application application;
 
 namespace poke
 {

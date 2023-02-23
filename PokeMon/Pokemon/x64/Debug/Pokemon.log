@@ -1,20 +1,11 @@
-﻿  pokeImage.cpp
+﻿  pokeRed.cpp
 C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(24,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(25,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  pokePlayScene.cpp
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(24,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(25,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  pokeRed.cpp
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(24,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(25,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(32,21): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(37,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(42,21): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(47,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(55,27): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(55,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  pokeResourceManager.cpp
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(24,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeMath.h(25,6): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(36,20): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(41,20): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(46,20): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(51,20): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(63,25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeRed.cpp(63,18): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\Pokemon\pokeGameObject.h(41): warning C4715: 'poke::GameObject::GetComponent<poke::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
   Pokemon.vcxproj -> C:\Users\hcw97\source\repos\46th\MyGame_PokeMon\PokeMon\x64\Debug\Pokemon.exe

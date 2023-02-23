@@ -3,6 +3,7 @@
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
 #include "pokeResourceManager.h"
+#include "pokeTransform.h"
 
 
 namespace poke
@@ -19,7 +20,7 @@ namespace poke
 
 	void Red::Initialize()
 	{
-		mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\Idle.bmp");
+		mImage = ResourceManager::Load<Image>(L"red", L"..\\Resources\\Idle.bmp");
 		GameObject::Initialize();
 	}
 
@@ -27,32 +28,39 @@ namespace poke
 	{
 		GameObject::Update();
 
-		if (Input::GetKeyState(eKeyCode::LEFT) == eKeyState::Hold)
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pos = tr->GetPos();
+
+		if (Input::GetKeyState(eKeyCode::LEFT) == eKeyState::Pressed)
 		{
-			mPos.x -= 100.0f * Time::DeltaTime();
+			pos.x -= 100.0f * Time::DeltaTime();
 		}
 
-		if (Input::GetKeyState(eKeyCode::RIGHT) == eKeyState::Hold)
+		if (Input::GetKeyState(eKeyCode::RIGHT) == eKeyState::Pressed)
 		{
-			mPos.x += 100.0f * Time::DeltaTime();
+			pos.x += 100.0f * Time::DeltaTime();
 		}
 
-		if (Input::GetKeyState(eKeyCode::UP) == eKeyState::Hold)
+		if (Input::GetKeyState(eKeyCode::UP) == eKeyState::Pressed)
 		{
-			mPos.y -= 100.0f * Time::DeltaTime();
+			pos.y -= 100.0f * Time::DeltaTime();
 		}
 
-		if (Input::GetKeyState(eKeyCode::DOWN) == eKeyState::Hold)
+		if (Input::GetKeyState(eKeyCode::DOWN) == eKeyState::Pressed)
 		{
-			mPos.y += 100.0f * Time::DeltaTime();
+			pos.y += 100.0f * Time::DeltaTime();
 		}
+
+		tr->SetPos(pos);
 	}
 
 	void Red::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
 		
-		BitBlt(hdc, mPos.x, mPos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pos = tr->GetPos();
+		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
 	}
 
 	void Red::Release()

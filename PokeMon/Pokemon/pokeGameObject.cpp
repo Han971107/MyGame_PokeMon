@@ -1,11 +1,13 @@
 #include "pokeGameObject.h"
+#include "pokeTransform.h"
 
 
 namespace poke
 {
 	GameObject::GameObject()
 	{
-
+		mComponents.resize((UINT)eComponentType::End);
+		AddComponent<Transform>();
 	}
 
 	GameObject::~GameObject()

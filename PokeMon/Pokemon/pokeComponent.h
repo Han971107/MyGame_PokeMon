@@ -6,17 +6,19 @@ namespace poke
 	class Component : public Entity
 	{
 	public:
-
 		Component();
-		~Component();
+		Component(eComponentType type);
+		virtual ~Component();
 
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-	private:
+		eComponentType GetType() { return mType; }
 
+	private:
+		eComponentType mType;
 	};
 }
 

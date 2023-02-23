@@ -22,7 +22,7 @@ namespace poke
 		HWND mHwnd;
 		HDC mHdc;
 
-		// 백버퍼 
+		//백버퍼
 		HBITMAP mBackBuffer;
 		HDC mBackHDC;
 

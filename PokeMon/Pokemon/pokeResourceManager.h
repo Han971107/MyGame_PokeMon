@@ -20,7 +20,7 @@ namespace poke
 				return dynamic_cast<T*>(iter->second);
 			}
 
-			// 데이터 없다면 널을 반환
+			// 데이터가 없다면 널을 반환
 			return nullptr;
 		}
 
@@ -49,8 +49,18 @@ namespace poke
 			return dynamic_cast<T*>(resource);
 		}
 
+		static void Release()
+		{
+			for (auto pair : mResources)
+			{
+				delete pair.second;
+				pair.second = nullptr;
+			}
+		}
+
 
 	private:
 		static std::map<std::wstring, Resource*> mResources;
+		
 	};
 }

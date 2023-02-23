@@ -22,17 +22,16 @@ namespace poke
 	{
 		mHwnd = hWnd;
 		mHdc = GetDC(hWnd);
-		mWidth = 1600;
-		mHeight = 900;
+		mWidth = 1920;
+		mHeight = 1080;
 
-		// 비트맵 해상도를 설정하기 위한 실제 윈도우 크기를 계산해준다.
+		// 비트맵 해상도를 설정하기 위한 실제 윈도우 크기를 계산해준다/
 		RECT rect = { 0, 0, mWidth, mHeight };
 		AdjustWindowRect(&rect, WS_EX_OVERLAPPEDWINDOW, false);
 
 		// 윈도우 크기 변경 및 출력 설정
 		SetWindowPos(mHwnd
-			, nullptr
-			, 100 , 50
+			, nullptr, 100, 50
 			, rect.right - rect.left
 			, rect.bottom - rect.top
 			, 0);
@@ -61,10 +60,10 @@ namespace poke
 		SceneManager::Update();
 	}
 
-	void Application::Render()
+	void poke::Application::Render()
 	{
 		// clear
-		Rectangle(mBackHDC, -1, -1, 1601, 901);
+		Rectangle(mBackHDC, -1, -1, 1921, 1081);
 
 		Time::Render(mBackHDC);
 		Input::Render(mBackHDC);

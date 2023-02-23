@@ -9,11 +9,9 @@ namespace poke
 		VK_RIGHT,
 		VK_UP,
 		VK_DOWN,
-
 		'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
 		'Z', 'X', 'C', 'V', 'B', 'N', 'M',
-
 		VK_MENU,
 		VK_CONTROL,
 		VK_LSHIFT,
@@ -50,7 +48,7 @@ namespace poke
 				{
 					// 이전 프레임에도 눌려있었다.
 					if (mKeys[i].bPressed)
-						mKeys[i].state = eKeyState::Hold;
+						mKeys[i].state = eKeyState::Pressed;
 					else
 						mKeys[i].state = eKeyState::Down;
 
@@ -63,6 +61,8 @@ namespace poke
 						mKeys[i].state = eKeyState::Up;
 					else
 						mKeys[i].state = eKeyState::None;
+
+					mKeys[i].bPressed = false;
 				}
 			}
 		}
@@ -71,7 +71,7 @@ namespace poke
 			for (int i = 0; i < (int)eKeyCode::END; ++i) {
 				mKeys[i].bPressed = false;
 
-				if (eKeyState::Down == mKeys[i].state || eKeyState::Hold == mKeys[i].state) {
+				if (eKeyState::Down == mKeys[i].state || eKeyState::Pressed == mKeys[i].state) {
 					mKeys[i].state == eKeyState::None;
 				}
 				else if (eKeyState::Up == mKeys[i].state) {

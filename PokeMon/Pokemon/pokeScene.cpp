@@ -46,6 +46,14 @@ namespace poke
 		}
 	}
 
+	void Scene::OnEnter()
+	{
+	}
+
+	void Scene::OnExit()
+	{
+	}
+
 	void Scene::AddGameObject(GameObject* obj, eLayerType layer)
 	{
 		mLayers[(UINT)layer].AddGameObject(obj);

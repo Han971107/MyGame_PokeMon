@@ -4,6 +4,8 @@
 
 namespace poke
 {
+	class Red;
+
 	class PlayScene : public Scene
 	{
 	public:
@@ -16,8 +18,11 @@ namespace poke
 		virtual void Render(HDC hdc) override;
 		virtual void Release() override;
 
-	private:
+		virtual void OnEnter() override;
+		virtual void OnExit() override;
 
+	private:
+		Red* mRed;
 	};
 }
 

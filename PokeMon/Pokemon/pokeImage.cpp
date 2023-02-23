@@ -1,7 +1,7 @@
 #include "pokeImage.h"
 #include "pokeApplication.h"
 
-extern poke::Application pokeApplication;
+extern poke::Application application;
 
 namespace poke
 {
@@ -33,7 +33,7 @@ namespace poke
 		mWidth = bitInfo.bmWidth;
 		mHeight = bitInfo.bmHeight;
 
-		HDC mainDC = pokeApplication.GetHdc();
+		HDC mainDC = application.GetHdc();
 		mHdc = CreateCompatibleDC(mainDC);
 
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mHdc, mBitmap);

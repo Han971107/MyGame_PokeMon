@@ -1,26 +1,21 @@
 #include "pokeSceneManager.h"
 #include "pokePlayScene.h"
+#include "pokeTitleScene.h"
 
 
 namespace poke
 {
-	std::vector<Scene*> SceneManager::mScenes{};
-
-	SceneManager::SceneManager()
-	{
-
-	}
-
-	SceneManager::~SceneManager()
-	{
-
-	}
+	std::vector<Scene*> SceneManager::mScenes = {};
+	Scene* SceneManager::mActiveScene = nullptr;
 
 	void SceneManager::Initialize()
 	{
-		mScenes.resize((UINT)eSceneType::Max);
+		mScenes.resize((UINT)eSceneType::End);
 
+		mScenes[(UINT)eSceneType::Title] = new TitleScene();
 		mScenes[(UINT)eSceneType::Play] = new PlayScene();
+
+		mActiveScene = mScenes[(UINT)eSceneType::Play];
 
 		for (Scene* scene : mScenes)
 		{
@@ -33,24 +28,12 @@ namespace poke
 
 	void SceneManager::Update()
 	{
-		for (Scene* scene : mScenes)
-		{
-			if (scene == nullptr)
-				continue;
-
-			scene->Update();
-		}
+		mActiveScene->Update();
 	}
 
 	void SceneManager::Render(HDC hdc)
 	{
-		for (Scene* scene : mScenes)
-		{
-			if (scene == nullptr)
-				continue;
-
-			scene->Render(hdc);
-		}
+		mActiveScene->Render(hdc);
 	}
 
 	void SceneManager::Release()
@@ -63,5 +46,15 @@ namespace poke
 			delete scene;
 			scene = nullptr;
 		}
+	}
+
+	void SceneManager::LoadScene(eSceneType type)
+	{
+		// ÇöÀç¾À
+		mActiveScene->OnExit();
+
+		// ´ÙÀ½¾À
+		mActiveScene = mScenes[(UINT)type];
+		mActiveScene->OnEnter();
 	}
 }

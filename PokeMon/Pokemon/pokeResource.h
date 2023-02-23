@@ -14,7 +14,7 @@ namespace poke
 		const std::wstring& GetKey() { return mKey; }
 		const std::wstring& GetPath() { return mPath; }
 		void SetKey(const std::wstring& key) { mKey = key; }
-		void SetPath(const std::wstring& path) { mPath = path; }
+		void SetPath(const std::wstring& path) { mKey = path; }
 
 	private:
 		std::wstring mKey;

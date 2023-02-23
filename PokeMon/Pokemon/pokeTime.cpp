@@ -34,7 +34,7 @@ namespace poke
 
 		if (mSecond > 1.0f)
 		{
-			HWND hwnd = pokeApplication.GetHwnd();
+			HWND hwnd = application.GetHwnd();
 
 			wchar_t szFloat[50]{};
 			float FPS = 1.0f / mDeltaTime;

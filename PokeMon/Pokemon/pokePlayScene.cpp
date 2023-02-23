@@ -1,5 +1,8 @@
 #include "pokePlayScene.h"
 #include "pokeRed.h"
+#include "pokeInput.h"
+#include "pokeSceneManager.h"
+
 
 namespace poke
 {
@@ -15,18 +18,20 @@ namespace poke
 
 	void PlayScene::Initialize()
 	{
-		for (int i = 0; i < 2; ++i) 
-		{
-			Red* red = new Red();
-			red->SetName(L"Player");
-			AddGameObject(red, eLayerType::Player);
-		}
+		mRed = new Red();
+		mRed->SetName(L"Player");
+		AddGameObject(mRed, eLayerType::Player);
 
 		Scene::Initialize();
 	}
 
 	void PlayScene::Update()
 	{
+		if (Input::GetKeyState(eKeyCode::N) == eKeyState::Down)
+		{
+			SceneManager::LoadScene(eSceneType::Title);
+		}
+
 		Scene::Update();
 	}
 
@@ -38,5 +43,15 @@ namespace poke
 	void PlayScene::Release()
 	{
 		Scene::Release();
+	}
+
+	void PlayScene::OnEnter()
+	{
+
+	}
+
+	void PlayScene::OnExit()
+	{
+		//mRed->SetPos(Vector2{ 0.0f, 0.0f });
 	}
 }
