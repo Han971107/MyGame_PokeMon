@@ -4,6 +4,7 @@
 
 namespace poke
 {
+	class BackGround;
 	class Red;
 
 	class PlayScene : public Scene
@@ -23,6 +24,7 @@ namespace poke
 
 	private:
 		Red* mRed;
+		BackGround* mBg;
 	};
 }
 

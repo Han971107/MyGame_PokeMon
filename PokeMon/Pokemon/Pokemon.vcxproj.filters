@@ -65,6 +65,12 @@
     <Filter Include="03_Component\Transform">
       <UniqueIdentifier>{c32199c1-c779-4b2f-80eb-d7cbc5119a3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02_Contents\BackGround">
+      <UniqueIdentifier>{2c488f5c-a00b-42d7-aa06-6c4d30ecb57c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Player\Red">
+      <UniqueIdentifier>{d9199d83-185a-4262-823c-5fa4cf187d4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -115,9 +121,6 @@
     <ClInclude Include="pokeComponent.h">
       <Filter>03_Component</Filter>
     </ClInclude>
-    <ClInclude Include="pokeRed.h">
-      <Filter>02_Contents\Player</Filter>
-    </ClInclude>
     <ClInclude Include="pokeTime.h">
       <Filter>01_Engine\Time</Filter>
     </ClInclude>
@@ -138,6 +141,12 @@
     </ClInclude>
     <ClInclude Include="pokeTransform.h">
       <Filter>03_Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeBackGround.h">
+      <Filter>02_Contents\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeRed.h">
+      <Filter>02_Contents\Player\Red</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +180,6 @@
     <ClCompile Include="pokeComponent.cpp">
       <Filter>03_Component</Filter>
     </ClCompile>
-    <ClCompile Include="pokeRed.cpp">
-      <Filter>02_Contents\Player</Filter>
-    </ClCompile>
     <ClCompile Include="pokeTime.cpp">
       <Filter>01_Engine\Time</Filter>
     </ClCompile>
@@ -194,6 +200,12 @@
     </ClCompile>
     <ClCompile Include="pokeTransform.cpp">
       <Filter>03_Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeBackGround.cpp">
+      <Filter>02_Contents\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeRed.cpp">
+      <Filter>02_Contents\Player\Red</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

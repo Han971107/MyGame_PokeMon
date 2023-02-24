@@ -3,6 +3,7 @@
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
 
+#include "pokeBackGround.h"
 
 namespace poke
 {
@@ -18,6 +19,11 @@ namespace poke
 
 	void PlayScene::Initialize()
 	{
+		mBg = new BackGround();
+		mBg->SetName(L"PlayScene");
+		mBg->SetImage(L"PlayScene", L"..\\Resources\\PlayScene.bmp");
+		AddGameObject(mBg, eLayerType::BG);
+
 		mRed = new Red();
 		mRed->SetName(L"Player");
 		AddGameObject(mRed, eLayerType::Player);

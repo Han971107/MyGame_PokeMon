@@ -3,6 +3,8 @@
 
 namespace poke
 {
+    class BackGround;
+
     class TitleScene : public Scene
     {
     public:
@@ -18,7 +20,7 @@ namespace poke
         virtual void OnExit() override;
 
     private:
-
+        BackGround* mBg;
     };
 }
 

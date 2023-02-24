@@ -1,6 +1,7 @@
 #include "pokeTitleScene.h"
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
+#include "pokeBackGround.h"
 
 
 namespace poke
@@ -17,7 +18,12 @@ namespace poke
 
 	void TitleScene::Initialize()
 	{
+		mBg = new BackGround();
+		mBg->SetName(L"TitleScene");
+		mBg->SetImage(L"TitleScene", L"..\\Resources\\TitleScene.bmp");
+		AddGameObject(mBg, eLayerType::BG);
 
+		Scene::Initialize();
 	}
 
 	void TitleScene::Update()
@@ -30,17 +36,21 @@ namespace poke
 
 	void TitleScene::Render(HDC hdc)
 	{
-
+		Scene::Render(hdc);
 	}
 
 	void TitleScene::Release()
 	{
-
+		Scene::Release();
 	}
+
 	void TitleScene::OnEnter()
 	{
+
 	}
+
 	void TitleScene::OnExit()
 	{
+
 	}
 }
