@@ -27,7 +27,7 @@ namespace poke
 		mRed = new Red();
 		mRed->SetName(L"Player");
 		AddGameObject(mRed, eLayerType::Player);
-
+		
 		Scene::Initialize();
 	}
 

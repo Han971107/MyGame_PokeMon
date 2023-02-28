@@ -6,6 +6,7 @@ namespace poke
 	class ResourceManager
 	{
 	public:
+
 		template<typename T>
 		static T* Find(const std::wstring& key)
 		{

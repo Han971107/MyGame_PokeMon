@@ -71,6 +71,9 @@
     <Filter Include="02_Contents\Player\Red">
       <UniqueIdentifier>{d9199d83-185a-4262-823c-5fa4cf187d4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03_Component\Animation &amp; Animator">
+      <UniqueIdentifier>{794f232e-57fc-4542-86af-2cc98d1f01e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -148,6 +151,12 @@
     <ClInclude Include="pokeRed.h">
       <Filter>02_Contents\Player\Red</Filter>
     </ClInclude>
+    <ClInclude Include="pokeAnimator.h">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeAnimation.h">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -206,6 +215,12 @@
     </ClCompile>
     <ClCompile Include="pokeRed.cpp">
       <Filter>02_Contents\Player\Red</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeAnimator.cpp">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeAnimation.cpp">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,9 @@
 namespace poke
 {
 	Red::Red()
+		: mImage(nullptr)
+		, mTime(0.0f)
+		, mIdx(0)
 	{
 
 	}
@@ -20,7 +23,7 @@ namespace poke
 
 	void Red::Initialize()
 	{
-		mImage = ResourceManager::Load<Image>(L"red", L"..\\Resources\\Idle.bmp");
+		mImage = ResourceManager::Load<Image>(L"red", L"..\\Resources\\PlayerStage.bmp");
 		GameObject::Initialize();
 	}
 
@@ -60,7 +63,23 @@ namespace poke
 		
 		Transform* tr = GetComponent<Transform>();
 		Vector2 pos = tr->GetPos();
-		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
+
+		mTime += Time::DeltaTime();
+
+		if (mIdx >= 4)
+		{
+			mIdx = 0;
+		}
+
+		if (mTime > 0.5f)
+		{
+			++mIdx;
+			mTime = 0.0f;
+		}
+
+		TransparentBlt(hdc, pos.x, pos.y, 64, 80
+				, mImage->GetHdc(), (64 * mIdx), 0, 64, 80, RGB(255, 0, 255));
+		//BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
 	}
 
 	void Red::Release()

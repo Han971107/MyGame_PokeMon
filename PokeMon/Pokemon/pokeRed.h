@@ -18,5 +18,7 @@ namespace poke
 
     private:
         Image* mImage;
+        float mTime;
+        int mIdx;
     };
 }

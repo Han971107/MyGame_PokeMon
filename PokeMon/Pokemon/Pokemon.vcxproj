@@ -132,6 +132,8 @@
     <ClInclude Include="CommonInclude.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MergeEngine.h" />
+    <ClInclude Include="pokeAnimation.h" />
+    <ClInclude Include="pokeAnimator.h" />
     <ClInclude Include="pokeApplication.h" />
     <ClInclude Include="pokeBackGround.h" />
     <ClInclude Include="pokeComponent.h" />
@@ -157,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pokeAnimation.cpp" />
+    <ClCompile Include="pokeAnimator.cpp" />
     <ClCompile Include="pokeApplication.cpp" />
     <ClCompile Include="pokeBackGround.cpp" />
     <ClCompile Include="pokeComponent.cpp" />
