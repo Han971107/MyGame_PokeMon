@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="01_Engine">
+      <UniqueIdentifier>{ec7db54f-bd93-447d-b049-5d95120bd042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\header">
+      <UniqueIdentifier>{aad1f111-cbc1-4052-93f1-dc9aa964ac1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\High Level Interface">
+      <UniqueIdentifier>{394b32dd-13a2-4093-be5c-8b7ed2535cbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\GameObject">
+      <UniqueIdentifier>{26bfcb49-7dd5-4e5b-82b8-e0635554eb71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Layer">
+      <UniqueIdentifier>{8ce9b159-1f92-41a8-b2e7-51e9ceb246de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Time">
+      <UniqueIdentifier>{475f6ac1-4da9-4a92-a12b-ff1f16f8882a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Entity">
+      <UniqueIdentifier>{79919a11-b1d4-4c39-9a40-69e42b07beeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Input">
+      <UniqueIdentifier>{b6442ef1-cc19-4786-b5fc-f7d02fa71f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Resource">
+      <UniqueIdentifier>{ef625546-ecc3-4f9d-9623-caf8eff2d146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Engine\Image">
+      <UniqueIdentifier>{a09fbc3c-a449-4cc4-9186-6a0fc6f4c1a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents">
+      <UniqueIdentifier>{486ba8ee-43a7-48b8-92f5-95db9852675b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Player">
+      <UniqueIdentifier>{2608cda0-b52e-4fbf-9cdf-069419a33167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene">
+      <UniqueIdentifier>{2b3e587a-7aba-476d-b3de-31d929c2f82f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\PlayScene">
+      <UniqueIdentifier>{7cb8e728-df7e-40e8-9090-a93074bcfae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\SceneManager">
+      <UniqueIdentifier>{c87695ac-2bef-4a3f-81d9-cc625d2e0770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\TitleScene">
+      <UniqueIdentifier>{6cb95653-7152-4dea-ba3d-8f1a9e9a035f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\IntroScene">
+      <UniqueIdentifier>{6fc625bb-1f8a-4920-9c9f-b548172699af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Component">
+      <UniqueIdentifier>{c532aba5-7ce9-42ac-ac0e-9ca3970a2be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_main">
+      <UniqueIdentifier>{ba643314-c53c-4b69-a71e-7785d581b8d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Component\Transform">
+      <UniqueIdentifier>{c32199c1-c779-4b2f-80eb-d7cbc5119a3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\BackGround">
+      <UniqueIdentifier>{2c488f5c-a00b-42d7-aa06-6c4d30ecb57c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Player\Red">
+      <UniqueIdentifier>{d9199d83-185a-4262-823c-5fa4cf187d4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Component\Animation &amp; Animator">
+      <UniqueIdentifier>{794f232e-57fc-4542-86af-2cc98d1f01e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonInclude.h">
+      <Filter>01_Engine\header</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeEngine.h">
+      <Filter>01_Engine\header</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeApplication.h">
+      <Filter>01_Engine\High Level Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeMath.h">
+      <Filter>01_Engine\header</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>00_main</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>00_main</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon.h">
+      <Filter>00_main</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>00_main</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeEnums.h">
+      <Filter>01_Engine\header</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeScene.h">
+      <Filter>02_Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeSceneManager.h">
+      <Filter>02_Contents\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeEntity.h">
+      <Filter>01_Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeLayer.h">
+      <Filter>01_Engine\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeGameObject.h">
+      <Filter>01_Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="pokePlayScene.h">
+      <Filter>02_Contents\Scene\PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeComponent.h">
+      <Filter>03_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeTime.h">
+      <Filter>01_Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeInput.h">
+      <Filter>01_Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeResource.h">
+      <Filter>01_Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeResourceManager.h">
+      <Filter>01_Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeImage.h">
+      <Filter>01_Engine\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeTitleScene.h">
+      <Filter>02_Contents\Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeTransform.h">
+      <Filter>03_Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeBackGround.h">
+      <Filter>02_Contents\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeRed.h">
+      <Filter>02_Contents\Player\Red</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeAnimator.h">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeAnimation.h">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pokeApplication.cpp">
+      <Filter>01_Engine\High Level Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeMath.cpp">
+      <Filter>01_Engine\header</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>00_main</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeScene.cpp">
+      <Filter>02_Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeSceneManager.cpp">
+      <Filter>02_Contents\Scene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeEntity.cpp">
+      <Filter>01_Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeLayer.cpp">
+      <Filter>01_Engine\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeGameObject.cpp">
+      <Filter>01_Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="pokePlayScene.cpp">
+      <Filter>02_Contents\Scene\PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeComponent.cpp">
+      <Filter>03_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeTime.cpp">
+      <Filter>01_Engine\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeInput.cpp">
+      <Filter>01_Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeResource.cpp">
+      <Filter>01_Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeResourceManager.cpp">
+      <Filter>01_Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeImage.cpp">
+      <Filter>01_Engine\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeTitleScene.cpp">
+      <Filter>02_Contents\Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeTransform.cpp">
+      <Filter>03_Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeBackGround.cpp">
+      <Filter>02_Contents\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeRed.cpp">
+      <Filter>02_Contents\Player\Red</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeAnimator.cpp">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeAnimation.cpp">
+      <Filter>03_Component\Animation &amp; Animator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Pokemon.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Pokemon.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
