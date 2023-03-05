@@ -136,6 +136,7 @@
     <ClInclude Include="pokeAnimator.h" />
     <ClInclude Include="pokeApplication.h" />
     <ClInclude Include="pokeBackGround.h" />
+    <ClInclude Include="pokeCollider.h" />
     <ClInclude Include="pokeComponent.h" />
     <ClInclude Include="pokeEntity.h" />
     <ClInclude Include="pokeEnums.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="pokeAnimator.cpp" />
     <ClCompile Include="pokeApplication.cpp" />
     <ClCompile Include="pokeBackGround.cpp" />
+    <ClCompile Include="pokeCollider.cpp" />
     <ClCompile Include="pokeComponent.cpp" />
     <ClCompile Include="pokeEntity.cpp" />
     <ClCompile Include="pokeGameObject.cpp" />

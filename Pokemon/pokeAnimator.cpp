@@ -104,7 +104,23 @@ namespace poke
 		key += fs.filename();
 		mSpriteSheet = Image::Create(key, width * fileCount, height);
 
-		//mActiveAnimation->Create();
+		int index = 0;
+		for (Image* image : images)
+		{
+			int centerX = (width - image->GetWidth()) / 2;
+			int centerY = (height - image->GetHeight());
+
+			BitBlt(mSpriteSheet->GetHdc()
+				, width * index + centerX
+				, 0
+				, image->GetWidth() + centerY
+				, image->GetHeight()
+				, image->GetHdc(), 0, 0, SRCCOPY);
+
+			index++;
+		}
+
+		CreateAnimation(key, mSpriteSheet, Vector2::Zero, index, 1, index, offset, duration);
 	}
 
 	Animation* Animator::FindAnimation(const std::wstring& name)

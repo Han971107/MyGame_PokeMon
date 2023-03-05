@@ -5,6 +5,7 @@
 namespace poke
 {
     class Animator;
+    class Collider;
 
     class Red : public GameObject
     {
@@ -37,5 +38,6 @@ namespace poke
     private:
         Animator* mAnimator;
         eRedState mState;
+        Collider* mCollider;
     };
 }

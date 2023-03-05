@@ -5,6 +5,7 @@
 #include "pokeResourceManager.h"
 #include "pokeTransform.h"
 #include "pokeAnimator.h"
+#include "pokeCollider.h"
 
 
 namespace poke
@@ -17,12 +18,14 @@ namespace poke
 
 	Red::~Red()
 	{
-
+		
 	}
 
 	void Red::Initialize()
 	{
-		Image* mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\PlayerStage.bmp");
+		GetComponent<Transform>()->SetPos(Vector2{200.0f, 200.0f});
+
+		Image* mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\PlayerStage1.bmp");
 		mAnimator = AddComponent<Animator>();
 
 		mAnimator->CreateAnimation(L"LeftRun", mImage, Vector2::Zero, 4, 4, 4, Vector2::Zero, 0.2);
@@ -41,6 +44,9 @@ namespace poke
 
 		mAnimator->Play(L"ForwardIdle", false);
 		mState = eRedState::Idle;
+
+		mCollider = AddComponent<Collider>();
+		mCollider->SetCenter(Vector2{ -50.f, 0.0f });
 
 		GameObject::Initialize();
 	}

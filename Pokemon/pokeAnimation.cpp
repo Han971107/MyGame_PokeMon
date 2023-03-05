@@ -51,12 +51,17 @@ namespace poke
     {
         Transform* tr
             = mAnimator->GetOwner()->GetComponent<Transform>();
-
         Vector2 scale = tr->GetScale();
+        
+        // 이미지가 그려질 좌표는 오브젝트 좌표의 위쪽 중간에 그려진다.
+        // 캐릭터의 발을 기준으로 포지션을 계산
+        Vector2 pos = tr->GetPos();
+        pos += mSpriteSheet[mSpriteIndex].offset;
+        pos.x -= mSpriteSheet[mSpriteIndex].size.x / 2.0f;
+        pos.x -= mSpriteSheet[mSpriteIndex].size.y;
 
         TransparentBlt(hdc
-            , tr->GetPos().x + mSpriteSheet[mSpriteIndex].offset.x
-            , tr->GetPos().y + mSpriteSheet[mSpriteIndex].offset.y
+            , pos.x, pos.y
             , mSpriteSheet[mSpriteIndex].size.x 
             , mSpriteSheet[mSpriteIndex].size.y 
             , mSheetImage->GetHdc()

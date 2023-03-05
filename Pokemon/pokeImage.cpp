@@ -29,6 +29,8 @@ namespace poke
 
 		image->SetKey(name);
 		ResourceManager::Insert<Image>(name, image);
+
+		Rectangle(image->GetHdc(), -1, -1, image->mWidth + 1, image->mHeight + 1);
 		
 		return image;
 	}
