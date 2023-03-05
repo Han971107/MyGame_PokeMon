@@ -25,7 +25,7 @@ namespace poke
 	enum class eKeyState
 	{
 		Down,
-		Pressed,
+		Hold,
 		Up,
 		None,
 	};
@@ -48,9 +48,24 @@ namespace poke
 		static void Update();
 		static void Render(HDC hdc);
 
-		static eKeyState GetKeyState(eKeyCode keyCode)
+		static __forceinline eKeyState GetKeyState(eKeyCode keyCode)
 		{
 			return mKeys[(UINT)keyCode].state;
+		}
+
+		static __forceinline bool GetKeyHold(eKeyCode keyCode)
+		{
+			return mKeys[static_cast<UINT>(keyCode)].state == eKeyState::Hold;
+		}
+
+		static __forceinline bool GetKeyDown(eKeyCode keyCode)
+		{
+			return mKeys[(UINT)keyCode].state == eKeyState::Down;
+		}
+
+		static __forceinline bool GetKeyUp(eKeyCode keyCode)
+		{
+			return mKeys[(UINT)keyCode].state == eKeyState::Up;
 		}
 
 	private:

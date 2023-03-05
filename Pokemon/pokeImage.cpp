@@ -1,10 +1,38 @@
 #include "pokeImage.h"
 #include "pokeApplication.h"
+#include "pokeResourceManager.h"
 
 extern poke::Application application;
 
 namespace poke
 {
+	Image* Image::Create(const std::wstring& name, UINT width, UINT height)
+	{
+		if (width == 0 || height == 0)
+			return nullptr;
+
+		Image* image = ResourceManager::Find<Image>(name);
+		if (image != nullptr)
+			return image;
+
+		image = new Image();
+		HDC mainHdc = application.GetHdc();
+
+		image->mBitmap = CreateCompatibleBitmap(mainHdc, width, height);
+		image->mHdc = CreateCompatibleDC(mainHdc);
+
+		HBITMAP oldBitmap =  (HBITMAP)SelectObject(image->mHdc, mainHdc);
+		DeleteObject(oldBitmap);
+
+		image->mWidth = width;
+		image->mHeight = height;
+
+		image->SetKey(name);
+		ResourceManager::Insert<Image>(name, image);
+		
+		return image;
+	}
+
 	Image::Image()
 		: mBitmap(NULL)
 		, mHdc(NULL)

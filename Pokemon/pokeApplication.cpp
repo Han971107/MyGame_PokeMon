@@ -22,8 +22,8 @@ namespace poke
 	{
 		mHwnd = hWnd;
 		mHdc = GetDC(hWnd);
-		mWidth = 1920;
-		mHeight = 1080;
+		mWidth = 1490;
+		mHeight = 990;
 
 		// 비트맵 해상도를 설정하기 위한 실제 윈도우 크기를 계산해준다/
 		RECT rect = { 0, 0, mWidth, mHeight };
@@ -77,7 +77,7 @@ namespace poke
 	{
 		HBRUSH grayBrush = CreateSolidBrush(RGB(121, 121, 121));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHDC, grayBrush);
-		Rectangle(mBackHDC, -1, -1, 1921, 1081);
+		Rectangle(mBackHDC, -1, -1, mWidth + 1, mHeight + 1);
 		SelectObject(mBackHDC, oldBrush);
 		DeleteObject(grayBrush);
 	}

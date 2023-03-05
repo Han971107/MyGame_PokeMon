@@ -51,7 +51,7 @@ namespace poke
 			, Vector2 offset, float duration);
 
 		// 폴더에 들어있는 스프라이트들을 이용해서 애니메이션 제작해주는 함수
-		void CreateAnimations();
+		void CreateAnimations(const std::wstring& path, Vector2 offset, float duration);
 
 		Animation* FindAnimation(const std::wstring& name);
 		void Play(const std::wstring& name, bool loop);

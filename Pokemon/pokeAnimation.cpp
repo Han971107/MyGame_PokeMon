@@ -52,8 +52,13 @@ namespace poke
         Transform* tr
             = mAnimator->GetOwner()->GetComponent<Transform>();
 
-        TransparentBlt(hdc, tr->GetPos().x, tr->GetPos().y
-            , mSpriteSheet[mSpriteIndex].size.x, mSpriteSheet[mSpriteIndex].size.y
+        Vector2 scale = tr->GetScale();
+
+        TransparentBlt(hdc
+            , tr->GetPos().x + mSpriteSheet[mSpriteIndex].offset.x
+            , tr->GetPos().y + mSpriteSheet[mSpriteIndex].offset.y
+            , mSpriteSheet[mSpriteIndex].size.x 
+            , mSpriteSheet[mSpriteIndex].size.y 
             , mSheetImage->GetHdc()
             , mSpriteSheet[mSpriteIndex].leftTop.x, mSpriteSheet[mSpriteIndex].leftTop.y
             , mSpriteSheet[mSpriteIndex].size.x, mSpriteSheet[mSpriteIndex].size.y,

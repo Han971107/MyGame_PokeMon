@@ -5,7 +5,8 @@ namespace poke
 {
     class Image : public Resource
     {
-	public:
+	public:	
+		static Image* Create(const std::wstring& name, UINT width, UINT height);
 
 		Image();
 		virtual ~Image();

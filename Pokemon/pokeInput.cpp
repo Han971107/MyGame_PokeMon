@@ -48,7 +48,7 @@ namespace poke
 				{
 					// 이전 프레임에도 눌려있었다.
 					if (mKeys[i].bPressed)
-						mKeys[i].state = eKeyState::Pressed;
+						mKeys[i].state = eKeyState::Hold;
 					else
 						mKeys[i].state = eKeyState::Down;
 
@@ -71,7 +71,7 @@ namespace poke
 			for (int i = 0; i < (int)eKeyCode::END; ++i) {
 				mKeys[i].bPressed = false;
 
-				if (eKeyState::Down == mKeys[i].state || eKeyState::Pressed == mKeys[i].state) {
+				if (eKeyState::Down == mKeys[i].state || eKeyState::Hold == mKeys[i].state) {
 					mKeys[i].state == eKeyState::None;
 				}
 				else if (eKeyState::Up == mKeys[i].state) {

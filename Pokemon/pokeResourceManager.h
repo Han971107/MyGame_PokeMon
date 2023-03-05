@@ -50,6 +50,12 @@ namespace poke
 			return dynamic_cast<T*>(resource);
 		}
 
+		template <typename T>
+		static void Insert(const std::wstring& key, T* recource)
+		{
+			mResources.insert(std::make_pair(key, recource));
+		}
+
 		static void Release()
 		{
 			for (auto pair : mResources)
