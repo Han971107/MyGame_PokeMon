@@ -58,4 +58,9 @@ namespace poke
 	{
 		mLayers[(UINT)layer].AddGameObject(obj);
 	}
+
+	const std::vector<GameObject*> Scene::GetGameObject(eLayerType type)
+	{
+		return mLayers[(UINT)type].GetGameObjects();
+	}
 }

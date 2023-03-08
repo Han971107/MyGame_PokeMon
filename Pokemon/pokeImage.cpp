@@ -6,7 +6,7 @@ extern poke::Application application;
 
 namespace poke
 {
-	Image* Image::Create(const std::wstring& name, UINT width, UINT height)
+	Image* Image::CreateEmptySpriteSheet(const std::wstring& name, UINT width, UINT height)
 	{
 		if (width == 0 || height == 0)
 			return nullptr;
@@ -21,7 +21,7 @@ namespace poke
 		image->mBitmap = CreateCompatibleBitmap(mainHdc, width, height);
 		image->mHdc = CreateCompatibleDC(mainHdc);
 
-		HBITMAP oldBitmap =  (HBITMAP)SelectObject(image->mHdc, mainHdc);
+		HBITMAP oldBitmap =  (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
 		DeleteObject(oldBitmap);
 
 		image->mWidth = width;

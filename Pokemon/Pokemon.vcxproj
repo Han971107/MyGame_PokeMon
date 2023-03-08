@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="pokeCollisionManager.h" />
     <ClInclude Include="CommonInclude.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MergeEngine.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="pokeGameObject.h" />
     <ClInclude Include="pokeImage.h" />
     <ClInclude Include="pokeInput.h" />
+    <ClInclude Include="pokeIntroScene.h" />
     <ClInclude Include="pokeLayer.h" />
     <ClInclude Include="pokeMath.h" />
     <ClInclude Include="Pokemon.h" />
@@ -159,6 +161,7 @@
     <ClInclude Include="pokeTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="pokeCollisionManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pokeAnimation.cpp" />
     <ClCompile Include="pokeAnimator.cpp" />
@@ -170,6 +173,7 @@
     <ClCompile Include="pokeGameObject.cpp" />
     <ClCompile Include="pokeImage.cpp" />
     <ClCompile Include="pokeInput.cpp" />
+    <ClCompile Include="pokeIntroScene.cpp" />
     <ClCompile Include="pokeLayer.cpp" />
     <ClCompile Include="pokeMath.cpp" />
     <ClCompile Include="pokePlayScene.cpp" />

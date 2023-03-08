@@ -2,6 +2,7 @@
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
 #include "pokeBackGround.h"
+#include "pokeTransform.h"
 
 
 namespace poke
@@ -21,6 +22,7 @@ namespace poke
 		mBg = new BackGround();
 		mBg->SetName(L"TitleScene");
 		mBg->SetImage(L"TitleScene", L"..\\Resources\\TitleScene.bmp");
+		//mBg->GetComponent<Transform>()->SetScale(Vector2{ 0.1f, 1.0f });
 		AddGameObject(mBg, eLayerType::BG);
 
 		Scene::Initialize();
@@ -32,6 +34,8 @@ namespace poke
 		{
 			SceneManager::LoadScene(eSceneType::Play);
 		}
+
+		Scene::Update();
 	}
 
 	void TitleScene::Render(HDC hdc)

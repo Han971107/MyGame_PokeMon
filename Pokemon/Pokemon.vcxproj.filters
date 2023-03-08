@@ -163,6 +163,10 @@
     <ClInclude Include="pokeCollider.h">
       <Filter>03_Component\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="pokeIntroScene.h" />
+    <ClInclude Include="pokeCollisionManager.h">
+      <Filter>03_Component\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -229,6 +233,10 @@
       <Filter>03_Component\Animation &amp; Animator</Filter>
     </ClCompile>
     <ClCompile Include="pokeCollider.cpp">
+      <Filter>03_Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeIntroScene.cpp" />
+    <ClCompile Include="pokeCollisionManager.cpp">
       <Filter>03_Component\Collider</Filter>
     </ClCompile>
   </ItemGroup>

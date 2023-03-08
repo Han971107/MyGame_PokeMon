@@ -11,9 +11,10 @@
 namespace poke
 {
 	Red::Red()
-		: mAnimator(nullptr)
 	{
-
+		mAnimator = AddComponent<Animator>();
+		mCollider = AddComponent<Collider>();
+		mState = eRedState::Idle;
 	}
 
 	Red::~Red()
@@ -23,11 +24,12 @@ namespace poke
 
 	void Red::Initialize()
 	{
-		GetComponent<Transform>()->SetPos(Vector2{200.0f, 200.0f});
+		Transform* tr = GetComponent<Transform>();
+		tr->SetPos(Vector2{ 170.0f, 250.0f });
+		mCollider->SetSize(Vector2{ 60.f, 80.f });
+		mCollider->SetCenter(Vector2{ -30.0f, -80.0f });
 
 		Image* mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\PlayerStage1.bmp");
-		mAnimator = AddComponent<Animator>();
-
 		mAnimator->CreateAnimation(L"LeftRun", mImage, Vector2::Zero, 4, 4, 4, Vector2::Zero, 0.2);
 		mAnimator->CreateAnimation(L"ForwardRun", mImage, Vector2{ 0.0f, 80.f }, 4, 4, 4, Vector2::Zero, 0.2);
 		mAnimator->CreateAnimation(L"BackRun", mImage, Vector2{ 0.0f, 160.f }, 4, 4, 4, Vector2::Zero, 0.2);
@@ -42,11 +44,8 @@ namespace poke
 		// backIdle
 		mAnimator->CreateAnimation(L"BackIdle", mImage, Vector2{ 0.0f, 160.f }, 4, 4, 1, Vector2::Zero, 0.0f);
 
-		mAnimator->Play(L"ForwardIdle", false);
-		mState = eRedState::Idle;
-
-		mCollider = AddComponent<Collider>();
-		mCollider->SetCenter(Vector2{ -50.f, 0.0f });
+		// Play
+		mAnimator->Play(L"ForwardIdle", false);	
 
 		GameObject::Initialize();
 	}

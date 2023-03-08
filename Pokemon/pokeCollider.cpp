@@ -9,7 +9,7 @@ namespace poke
 		, mCenter(Vector2::Zero)
 		, mScale(Vector2::One)
 		, mPos(Vector2::Zero)
-		, mSize(60.0f, 80.f)
+		, mSize(Vector2::One)
 	{
 
 	}
@@ -37,7 +37,7 @@ namespace poke
 		HBRUSH brush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
 
-		Rectangle(hdc, mPos.x, mPos.y, mPos.x - mSize.x, mPos.y + mSize.y);
+		Rectangle(hdc, mPos.x, mPos.y, mPos.x + mSize.x, mPos.y + mSize.y);
 
 		(HPEN)SelectObject(hdc, oldPen);
 		DeleteObject(pen);

@@ -1,4 +1,5 @@
 #pragma once
+#include "CommonInclude.h"
 
 
 struct Vector2
@@ -59,6 +60,16 @@ struct Vector2
 		return temp;
 	}
 
+	Vector2 operator*(const Vector2& other)
+	{
+		Vector2 temp;
+
+		temp.x = x * other.x;
+		temp.y = y * other.y;
+
+		return temp;
+	}
+
 	Vector2& operator+=(const Vector2& other)
 	{
 		x += other.x;
@@ -74,5 +85,22 @@ struct Vector2
 
 		return *this;
 	}
+
+	Vector2& operator*=(const Vector2& other)
+	{
+		x *= other.x;
+		y *= other.x;
+
+		return *this;
+	}
+
+	friend UINT operator*(UINT lhs, Vector2& rhs)
+	{
+		UINT temp;
+		temp = lhs * rhs;
+
+		return temp;
+	}
+
 };
 

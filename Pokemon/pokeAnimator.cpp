@@ -62,7 +62,7 @@ namespace poke
 			return;
 
 		animation = new Animation();
-		animation->Create(sheet, leftTop, column, row, spriteLength, offset, duration);
+		animation->CreateSpriteSheet(sheet, leftTop, column, row, spriteLength, offset, duration);
 		animation->SetName(name);
 		animation->SetAnimator(this);
 
@@ -77,12 +77,12 @@ namespace poke
 
 		std::filesystem::path fs(path);
 		std::vector<Image*> images = {};
-		for (auto& p : std::filesystem::recursive_directory_iterator(path))
+		for (const auto& p : std::filesystem::recursive_directory_iterator(path))
 		{
 			std::wstring fileName = p.path().filename();
 			std::wstring fullName = path + L"\\" + fileName;
 
-			std::wstring ext = p.path().extension();
+			const std::wstring ext = p.path().extension();
 			if (ext == L".png")
 				continue;
 
@@ -99,11 +99,12 @@ namespace poke
 			}
 			fileCount++;
 		}
-		
+
 		std::wstring key = fs.parent_path().filename();
 		key += fs.filename();
-		mSpriteSheet = Image::Create(key, width * fileCount, height);
+		mSpriteSheet = Image::CreateEmptySpriteSheet(key, width * fileCount, height);
 
+		//
 		int index = 0;
 		for (Image* image : images)
 		{
@@ -112,9 +113,8 @@ namespace poke
 
 			BitBlt(mSpriteSheet->GetHdc()
 				, width * index + centerX
-				, 0
-				, image->GetWidth() + centerY
-				, image->GetHeight()
+				, 0 + centerY
+				, image->GetWidth(), image->GetHeight()
 				, image->GetHdc(), 0, 0, SRCCOPY);
 
 			index++;

@@ -1,4 +1,5 @@
 #include "pokeSceneManager.h"
+#include "pokeIntroScene.h"
 #include "pokePlayScene.h"
 #include "pokeTitleScene.h"
 
@@ -12,10 +13,13 @@ namespace poke
 	{
 		mScenes.resize((UINT)eSceneType::End);
 
+		mScenes[(UINT)eSceneType::Intro] = new IntroScene();
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
 		mScenes[(UINT)eSceneType::Play] = new PlayScene();
 
-		mActiveScene = mScenes[(UINT)eSceneType::Play];
+		mActiveScene = mScenes[(UINT)eSceneType::Intro];
+		//mActiveScene = mScenes[(UINT)eSceneType::Title];
+		//mActiveScene = mScenes[(UINT)eSceneType::Play];
 
 		for (Scene* scene : mScenes)
 		{

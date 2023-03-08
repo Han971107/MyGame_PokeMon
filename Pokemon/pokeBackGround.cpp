@@ -1,6 +1,7 @@
 #include "pokeBackGround.h"
 #include "pokeImage.h"
 #include "pokeTransform.h"
+#include "pokeAnimator.h"
 
 namespace poke
 {
@@ -16,26 +17,36 @@ namespace poke
 
 	void BackGround::Initialize()
 	{
-		
+		GameObject::Initialize();
 	}
 
 	void BackGround::Update()
 	{
-
+		GameObject::Update();
 	}
 
 	void BackGround::Render(HDC hdc)
 	{
-		GameObject::Render(hdc);
+		Animator* anim = GetComponent<Animator>();
 
-		Transform* tr = GetComponent<Transform>();
-		Vector2 pos = tr->GetPos();
-		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(), mImage->GetHeight(), mImage->GetHdc(), 0, 0, SRCCOPY);
+		if (anim != nullptr)
+		{
+			GameObject::Render(hdc);
+		}
+		else
+		{
+			Transform* tr = GetComponent<Transform>();
+			Vector2 pos = tr->GetPos();
+			Vector2 scale = tr->GetScale();
+			BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
+
+			GameObject::Render(hdc);
+		}
 	}
 
 	void BackGround::Release()
 	{
-
+		GameObject::Release();
 	}
 
 	void BackGround::SetImage(const std::wstring& key, const std::wstring& path)

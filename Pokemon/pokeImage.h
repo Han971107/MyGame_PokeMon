@@ -6,7 +6,7 @@ namespace poke
     class Image : public Resource
     {
 	public:	
-		static Image* Create(const std::wstring& name, UINT width, UINT height);
+		static Image* CreateEmptySpriteSheet(const std::wstring& name, UINT width, UINT height);
 
 		Image();
 		virtual ~Image();

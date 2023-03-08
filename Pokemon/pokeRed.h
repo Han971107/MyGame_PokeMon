@@ -29,15 +29,18 @@ namespace poke
 
 
     private:
+        // 함수 이름이 앞에 소문자인건 private 이라는 뜻이다
         void Idle();
         void moveLeft();
         void moveRight();
         void moveUp();
         void moveDown();
 
+
     private:
         Animator* mAnimator;
-        eRedState mState;
         Collider* mCollider;
+        eRedState mState;
+        
     };
 }

@@ -32,7 +32,7 @@ namespace poke
 		void Initialize();
 		void Update();
 		void Render(HDC hdc);
-		void Create(Image* sheet, Vector2 leftTop, UINT column, UINT row, UINT spriteLength, Vector2 offset, float duration);
+		void CreateSpriteSheet(Image* sheet, Vector2 leftTop, UINT column, UINT row, UINT spriteLength, Vector2 offset, float duration);
 		void Reset();
 
 		bool IsComplete() { return mbComplete; }

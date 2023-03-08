@@ -18,6 +18,7 @@ namespace poke
         virtual void Release() override;
 
         void SetImage(const std::wstring& key, const std::wstring& path);
+        Image* GetImage() const { return mImage; }
       
 
     private:

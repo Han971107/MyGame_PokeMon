@@ -13,6 +13,7 @@ namespace poke
 		static void Release();
 
 		static void LoadScene(eSceneType type);
+		static Scene* GetActiveScene() { return mActiveScene; }
 
 	private:
 		static std::vector<Scene*> mScenes;

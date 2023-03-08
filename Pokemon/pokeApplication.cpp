@@ -2,6 +2,7 @@
 #include "pokeSceneManager.h"
 #include "pokeTime.h"
 #include "pokeInput.h"
+#include "pokeCollisionManager.h"
 
 
 namespace poke
@@ -22,8 +23,10 @@ namespace poke
 	{
 		mHwnd = hWnd;
 		mHdc = GetDC(hWnd);
-		mWidth = 1490;
-		mHeight = 990;
+		mWidth = 800;
+		mHeight = 660;
+		//mWidth = 1490;
+		//mHeight = 990;
 
 		// 비트맵 해상도를 설정하기 위한 실제 윈도우 크기를 계산해준다/
 		RECT rect = { 0, 0, mWidth, mHeight };
@@ -58,6 +61,7 @@ namespace poke
 		Time::Update();
 		Input::Update();
 		SceneManager::Update();
+		CollisionManager::Update();
 	}
 
 	void poke::Application::Render()

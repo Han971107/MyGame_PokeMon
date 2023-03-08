@@ -21,6 +21,7 @@ namespace poke
 		virtual void OnExit();
 
 		void AddGameObject(GameObject* obj, eLayerType layer);
+		const std::vector<GameObject*> GetGameObject(eLayerType type);
 
 	private:
 		std::vector<Layer> mLayers;

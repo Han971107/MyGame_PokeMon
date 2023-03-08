@@ -2,7 +2,7 @@
 #include "pokeRed.h"
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
-
+#include "pokeCollider.h"
 #include "pokeBackGround.h"
 
 namespace poke
@@ -22,6 +22,9 @@ namespace poke
 		mBg = new BackGround();
 		mBg->SetName(L"PlayScene");
 		mBg->SetImage(L"PlayScene", L"..\\Resources\\PlayScene.bmp");
+		//Collider* collider = mBg->AddComponent<Collider>();
+		//collider->SetSize(Vector2{ 100.f, 100.f });
+		//collider->SetCenter(Vector2{ 1.f, -50.f });
 		AddGameObject(mBg, eLayerType::BG);
 
 		mRed = new Red();

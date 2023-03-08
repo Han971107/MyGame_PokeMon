@@ -18,7 +18,7 @@ enum class eLayerType
 	Monster,
 	Effect,
 	UI,
-	End,
+	End = 16,
 };
 
 enum class eComponentType
