@@ -22,7 +22,10 @@ namespace poke
         void OnCollisionExit(Collider* other);
 
         Vector2 GetPos() { return mPos; }
-        Vector2 GetSize() { return mSize; }     
+        Vector2 GetSize() { return mSize; }  
+
+        void SetColliderName(const std::wstring& colliderName) { mColliderName = colliderName; }
+        std::wstring& GetColliderName() { return mColliderName; }
          
     private:
         static UINT ColliderNumber;
@@ -30,5 +33,7 @@ namespace poke
         Vector2 mCenter;
         Vector2 mPos;
         Vector2 mSize;
+
+        std::wstring mColliderName;
     };
 }

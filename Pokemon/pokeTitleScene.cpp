@@ -54,6 +54,6 @@ namespace poke
 
 	void TitleScene::OnExit()
 	{
-
+	
 	}
 }

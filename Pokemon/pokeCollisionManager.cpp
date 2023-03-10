@@ -71,7 +71,8 @@ namespace poke
 				leftCol->OnCollisionEnter(rightCol);
 				rightCol->OnCollisionEnter(leftCol);
 
-				iter->second = true;
+				if(!mCollisionMap.empty())
+					iter->second = true;
 			}	
 			else // 충돌 중인 상태 stay
 			{

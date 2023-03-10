@@ -90,7 +90,10 @@ namespace poke
 
 	void Red::OnCollisionEnter(Collider* other)
 	{
-		int a = 0;
+		if (other->GetColliderName() == L"PlaySceneDoor")
+		{
+			SceneManager::LoadScene(eSceneType::Title);
+		}
 	}
 
 	void Red::OnCollisionStay(Collider* other)

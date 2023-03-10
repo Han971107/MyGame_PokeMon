@@ -27,7 +27,7 @@ namespace poke
 			scene->Initialize();
 		}
 
-		mActiveScene = mScenes[(UINT)eSceneType::Intro];
+		mActiveScene = mScenes[(UINT)eSceneType::Play];
 	}
 
 	void SceneManager::Update()

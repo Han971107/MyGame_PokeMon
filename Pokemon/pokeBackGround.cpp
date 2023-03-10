@@ -3,6 +3,7 @@
 #include "pokeTransform.h"
 #include "pokeAnimator.h"
 
+
 namespace poke
 {
 	BackGround::BackGround()
@@ -38,6 +39,7 @@ namespace poke
 			Transform* tr = GetComponent<Transform>();
 			Vector2 pos = tr->GetPos();
 			Vector2 scale = tr->GetScale();
+
 			BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
 
 			GameObject::Render(hdc);
