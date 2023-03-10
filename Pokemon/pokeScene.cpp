@@ -1,4 +1,5 @@
 #include "pokeScene.h"
+#include "pokeSceneManager.h"
 
 
 namespace poke
@@ -16,10 +17,7 @@ namespace poke
 
 	void Scene::Initialize()
 	{
-		for (Layer& layer : mLayers)
-		{
-			layer.Initialize();
-		}
+		SceneManager::SetActiveScene(this);
 	}
 
 	void Scene::Update()
@@ -35,6 +33,30 @@ namespace poke
 		for (Layer& layer : mLayers)
 		{
 			layer.Render(hdc);
+		}
+	}
+
+	void Scene::Destroy()
+	{
+		std::vector<GameObject*> deleteGameObjects = {};
+		for (Layer& layer : mLayers)
+		{
+			std::vector<GameObject*>& gameObjects
+				= layer.GetGameObjects();
+
+			for (std::vector<GameObject*>::iterator iter = gameObjects.begin();
+				iter != gameObjects.end(); )
+			{
+				if ((*iter)->GetState() == GameObject::eState::Death)
+				{
+					deleteGameObjects.push_back(*iter);
+					iter = gameObjects.erase(iter);
+				}
+				else
+				{
+					++iter;
+				}
+			}
 		}
 	}
 
@@ -59,8 +81,10 @@ namespace poke
 		mLayers[(UINT)layer].AddGameObject(obj);
 	}
 
-	const std::vector<GameObject*> Scene::GetGameObject(eLayerType type)
+	std::vector<GameObject*>& Scene::GetGameObject(eLayerType type)
 	{
 		return mLayers[(UINT)type].GetGameObjects();
 	}
+	
+
 }

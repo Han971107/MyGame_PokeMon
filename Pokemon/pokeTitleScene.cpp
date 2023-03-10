@@ -3,6 +3,7 @@
 #include "pokeSceneManager.h"
 #include "pokeBackGround.h"
 #include "pokeTransform.h"
+#include "pokeObject.h"
 
 
 namespace poke
@@ -19,13 +20,11 @@ namespace poke
 
 	void TitleScene::Initialize()
 	{
-		mBg = new BackGround();
-		mBg->SetName(L"TitleScene");
-		mBg->SetImage(L"TitleScene", L"..\\Resources\\TitleScene.bmp");
-		//mBg->GetComponent<Transform>()->SetScale(Vector2{ 0.1f, 1.0f });
-		AddGameObject(mBg, eLayerType::BG);
-
 		Scene::Initialize();
+
+		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
+		mBg->SetName(L"TitleScene");
+		mBg->SetImage(L"TitleScene", L"..\\Resources\\TitleScene.bmp");	
 	}
 
 	void TitleScene::Update()

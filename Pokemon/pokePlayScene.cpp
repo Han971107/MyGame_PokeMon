@@ -7,6 +7,7 @@
 #include "pokeTransform.h"
 #include "pokeCollisionManager.h"
 #include "pokeCamera.h"
+#include "pokeObject.h"
 
 
 namespace poke
@@ -23,24 +24,24 @@ namespace poke
 
 	void PlayScene::Initialize()
 	{
-		mBg = new BackGround();
+		Scene::Initialize();
+
+		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
 		mBg->SetName(L"PlayScene");
 		mBg->SetImage(L"PlayScene", L"..\\Resources\\PlayScene.bmp");
 		Collider* collider = mBg->AddComponent<Collider>();
 		collider->SetSize(Vector2{ 100.f, 50.f });
 		collider->SetCenter(Vector2{ 180.f, 550.f });
-		AddGameObject(mBg, eLayerType::BG);
 
-		mRed = new Red();
+
+		mRed = Object::Instantiate<Red>(Vector2{ 170.0f, 250.0f }, eLayerType::Player);
 		mRed->SetName(L"Player");
-		AddGameObject(mRed, eLayerType::Player);
 
 		// 카메라 타겟을 플레이어로 고정
 		//Camera::SetTarget(mRed);
 
 		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
 		
-		Scene::Initialize();
 	}
 
 	void PlayScene::Update()

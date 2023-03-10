@@ -149,6 +149,7 @@
     <ClInclude Include="pokeLayer.h" />
     <ClInclude Include="pokeMath.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="pokeObject.h" />
     <ClInclude Include="pokePlayScene.h" />
     <ClInclude Include="pokeRed.h" />
     <ClInclude Include="pokeResourceManager.h" />

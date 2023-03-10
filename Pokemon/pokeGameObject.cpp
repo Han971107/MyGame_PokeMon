@@ -1,11 +1,11 @@
 #include "pokeGameObject.h"
 #include "pokeTransform.h"
-#include "pokeCollider.h"
 
 
 namespace poke
 {
 	GameObject::GameObject()
+		: mState(eState::Active)
 	{
 		mComponents.resize((UINT)eComponentType::End);
 		AddComponent<Transform>();

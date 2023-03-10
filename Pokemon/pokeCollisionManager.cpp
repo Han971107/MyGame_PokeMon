@@ -24,8 +24,8 @@ namespace poke
 
 	void CollisionManager::LayerCollision(Scene* scene, eLayerType left, eLayerType right)
 	{
-		const std::vector<GameObject*>& lefts = scene->GetGameObject(left);
-		const std::vector<GameObject*>& rights = scene->GetGameObject(right);
+		std::vector<GameObject*>& lefts = scene->GetGameObject(left);
+		std::vector<GameObject*>& rights = scene->GetGameObject(right);
 
 		for (auto leftObject : lefts)
 		{
@@ -45,7 +45,6 @@ namespace poke
 				ColliderCollision(leftCollider, rightCollider, left, right);
 			}
 		}
-
 	}
 
 	void CollisionManager::ColliderCollision(Collider* leftCol, Collider* rightCol, eLayerType left, eLayerType right)

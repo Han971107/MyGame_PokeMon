@@ -15,13 +15,14 @@ namespace poke
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
+		virtual void Destroy();
 		virtual void Release();
 
 		virtual void OnEnter();
 		virtual void OnExit();
 
 		void AddGameObject(GameObject* obj, eLayerType layer);
-		const std::vector<GameObject*> GetGameObject(eLayerType type);
+		std::vector<GameObject*>& GetGameObject(eLayerType layer);
 
 	private:
 		std::vector<Layer> mLayers;

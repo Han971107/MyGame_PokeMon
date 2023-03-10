@@ -19,10 +19,6 @@ namespace poke
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
 		mScenes[(UINT)eSceneType::Play] = new PlayScene();
 
-		mActiveScene = mScenes[(UINT)eSceneType::Intro];
-		//mActiveScene = mScenes[(UINT)eSceneType::Title];
-		//mActiveScene = mScenes[(UINT)eSceneType::Play];
-
 		for (Scene* scene : mScenes)
 		{
 			if (scene == nullptr)
@@ -30,6 +26,8 @@ namespace poke
 
 			scene->Initialize();
 		}
+
+		mActiveScene = mScenes[(UINT)eSceneType::Intro];
 	}
 
 	void SceneManager::Update()
@@ -40,6 +38,10 @@ namespace poke
 	void SceneManager::Render(HDC hdc)
 	{
 		mActiveScene->Render(hdc);
+	}
+
+	void SceneManager::Destroy()
+	{
 	}
 
 	void SceneManager::Release()

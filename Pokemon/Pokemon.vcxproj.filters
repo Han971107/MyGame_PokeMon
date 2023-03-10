@@ -172,7 +172,12 @@
     <ClInclude Include="pokeIntroScene.h">
       <Filter>02_Contents\Scene\IntroScene</Filter>
     </ClInclude>
-    <ClInclude Include="pokeCamera.h" />
+    <ClInclude Include="pokeObject.h">
+      <Filter>01_Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeCamera.h">
+      <Filter>01_Engine\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
