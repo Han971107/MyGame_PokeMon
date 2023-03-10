@@ -29,12 +29,12 @@ namespace poke
 
 	void TitleScene::Update()
 	{
+		Scene::Update();
+
 		if (Input::GetKeyDown(eKeyCode::N))
 		{
-			SceneManager::LoadScene(eSceneType::Play);
+			SceneManager::LoadScene(eSceneType::Home);
 		}
-
-		Scene::Update();
 	}
 
 	void TitleScene::Render(HDC hdc)

@@ -44,9 +44,6 @@
     <Filter Include="02_Contents\Scene">
       <UniqueIdentifier>{2b3e587a-7aba-476d-b3de-31d929c2f82f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02_Contents\Scene\PlayScene">
-      <UniqueIdentifier>{7cb8e728-df7e-40e8-9090-a93074bcfae6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02_Contents\Scene\SceneManager">
       <UniqueIdentifier>{c87695ac-2bef-4a3f-81d9-cc625d2e0770}</UniqueIdentifier>
     </Filter>
@@ -79,6 +76,12 @@
     </Filter>
     <Filter Include="01_Engine\Camera">
       <UniqueIdentifier>{91658bf1-cdf4-4c5f-9a3b-beec0c2b7503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\HomeScene">
+      <UniqueIdentifier>{7cb8e728-df7e-40e8-9090-a93074bcfae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Contents\Scene\PlayScene">
+      <UniqueIdentifier>{accf224a-0a30-419e-9d01-616349f5cdbe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -124,8 +127,8 @@
     <ClInclude Include="pokeGameObject.h">
       <Filter>01_Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="pokePlayScene.h">
-      <Filter>02_Contents\Scene\PlayScene</Filter>
+    <ClInclude Include="pokeHomeScene.h">
+      <Filter>02_Contents\Scene\HomeScene</Filter>
     </ClInclude>
     <ClInclude Include="pokeComponent.h">
       <Filter>03_Component</Filter>
@@ -178,6 +181,7 @@
     <ClInclude Include="pokeCamera.h">
       <Filter>01_Engine\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="pokePlayScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -204,8 +208,8 @@
     <ClCompile Include="pokeGameObject.cpp">
       <Filter>01_Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="pokePlayScene.cpp">
-      <Filter>02_Contents\Scene\PlayScene</Filter>
+    <ClCompile Include="pokeHomeScene.cpp">
+      <Filter>02_Contents\Scene\HomeScene</Filter>
     </ClCompile>
     <ClCompile Include="pokeComponent.cpp">
       <Filter>03_Component</Filter>
@@ -255,6 +259,7 @@
     <ClCompile Include="pokeCamera.cpp">
       <Filter>01_Engine\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="pokePlayScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc">

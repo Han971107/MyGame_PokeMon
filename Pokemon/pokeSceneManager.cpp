@@ -1,7 +1,8 @@
 #include "pokeSceneManager.h"
 #include "pokeIntroScene.h"
-#include "pokePlayScene.h"
+#include "pokeHomeScene.h"
 #include "pokeTitleScene.h"
+#include "pokePlayScene.h"
 #include "pokeCollisionManager.h"
 #include "pokeCamera.h"
 
@@ -17,6 +18,7 @@ namespace poke
 
 		mScenes[(UINT)eSceneType::Intro] = new IntroScene();
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
+		mScenes[(UINT)eSceneType::Home] = new HomeScene();
 		mScenes[(UINT)eSceneType::Play] = new PlayScene();
 
 		for (Scene* scene : mScenes)
@@ -27,7 +29,7 @@ namespace poke
 			scene->Initialize();
 		}
 
-		mActiveScene = mScenes[(UINT)eSceneType::Play];
+		mActiveScene = mScenes[(UINT)eSceneType::Home];
 	}
 
 	void SceneManager::Update()

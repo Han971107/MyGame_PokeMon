@@ -150,7 +150,7 @@
     <ClInclude Include="pokeMath.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="pokeObject.h" />
-    <ClInclude Include="pokePlayScene.h" />
+    <ClInclude Include="pokeHomeScene.h" />
     <ClInclude Include="pokeRed.h" />
     <ClInclude Include="pokeResourceManager.h" />
     <ClInclude Include="pokeScene.h" />
@@ -161,6 +161,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="pokeResource.h" />
     <ClInclude Include="pokeTransform.h" />
+    <ClInclude Include="pokePlayScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeCamera.cpp" />
@@ -179,7 +180,7 @@
     <ClCompile Include="pokeIntroScene.cpp" />
     <ClCompile Include="pokeLayer.cpp" />
     <ClCompile Include="pokeMath.cpp" />
-    <ClCompile Include="pokePlayScene.cpp" />
+    <ClCompile Include="pokeHomeScene.cpp" />
     <ClCompile Include="pokeRed.cpp" />
     <ClCompile Include="pokeResourceManager.cpp" />
     <ClCompile Include="pokeScene.cpp" />
@@ -188,6 +189,7 @@
     <ClCompile Include="pokeResource.cpp" />
     <ClCompile Include="pokeTitleScene.cpp" />
     <ClCompile Include="pokeTransform.cpp" />
+    <ClCompile Include="pokePlayScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc" />

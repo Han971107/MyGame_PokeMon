@@ -91,7 +91,7 @@ namespace poke
 	{
 		if (other->GetColliderName() == L"PlaySceneDoor")
 		{
-			SceneManager::LoadScene(eSceneType::Title);
+			SceneManager::LoadScene(eSceneType::Play);
 		}
 	}
 

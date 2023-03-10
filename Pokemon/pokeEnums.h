@@ -5,6 +5,7 @@ enum class eSceneType
 {
 	Intro,
 	Title,
+	Home,
 	Play,
 	Ending,
 	End,
