@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="pokeCamera.h" />
     <ClInclude Include="pokeCollisionManager.h" />
     <ClInclude Include="CommonInclude.h" />
     <ClInclude Include="framework.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="pokeTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="pokeCamera.cpp" />
     <ClCompile Include="pokeCollisionManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pokeAnimation.cpp" />

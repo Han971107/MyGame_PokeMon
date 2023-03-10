@@ -4,6 +4,10 @@
 #include "pokeSceneManager.h"
 #include "pokeCollider.h"
 #include "pokeBackGround.h"
+#include "pokeTransform.h"
+#include "pokeCollisionManager.h"
+#include "pokeCamera.h"
+
 
 namespace poke
 {
@@ -22,14 +26,19 @@ namespace poke
 		mBg = new BackGround();
 		mBg->SetName(L"PlayScene");
 		mBg->SetImage(L"PlayScene", L"..\\Resources\\PlayScene.bmp");
-		//Collider* collider = mBg->AddComponent<Collider>();
-		//collider->SetSize(Vector2{ 100.f, 100.f });
-		//collider->SetCenter(Vector2{ 1.f, -50.f });
+		Collider* collider = mBg->AddComponent<Collider>();
+		collider->SetSize(Vector2{ 100.f, 50.f });
+		collider->SetCenter(Vector2{ 180.f, 550.f });
 		AddGameObject(mBg, eLayerType::BG);
 
 		mRed = new Red();
 		mRed->SetName(L"Player");
 		AddGameObject(mRed, eLayerType::Player);
+
+		// 카메라 타겟을 플레이어로 고정
+		//Camera::SetTarget(mRed);
+
+		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
 		
 		Scene::Initialize();
 	}
@@ -56,7 +65,7 @@ namespace poke
 
 	void PlayScene::OnEnter()
 	{
-
+		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
 	}
 
 	void PlayScene::OnExit()

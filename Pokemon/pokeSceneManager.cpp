@@ -2,6 +2,8 @@
 #include "pokeIntroScene.h"
 #include "pokePlayScene.h"
 #include "pokeTitleScene.h"
+#include "pokeCollisionManager.h"
+#include "pokeCamera.h"
 
 
 namespace poke
@@ -54,8 +56,12 @@ namespace poke
 
 	void SceneManager::LoadScene(eSceneType type)
 	{
+		Camera::Clear();
+
 		// «ˆ¿Áæ¿
 		mActiveScene->OnExit();
+
+		CollisionManager::Clear();
 
 		// ¥Ÿ¿Ωæ¿
 		mActiveScene = mScenes[(UINT)type];

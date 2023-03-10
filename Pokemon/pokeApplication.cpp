@@ -3,6 +3,7 @@
 #include "pokeTime.h"
 #include "pokeInput.h"
 #include "pokeCollisionManager.h"
+#include "pokeCamera.h"
 
 
 namespace poke
@@ -48,6 +49,7 @@ namespace poke
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		Camera::Initialize();
 	}
 
 	void Application::Run()
@@ -60,6 +62,8 @@ namespace poke
 	{
 		Time::Update();
 		Input::Update();
+		Camera::Update();
+
 		SceneManager::Update();
 		CollisionManager::Update();
 	}

@@ -57,13 +57,19 @@ namespace poke
 		void Play(const std::wstring& name, bool loop);
 
 		Events* FindEvents(const std::wstring& name);
-		/*std::function<void>& GetStartEvent(const std::wstring& name);
-		std::function<void>& GetCompleteEvent(const std::wstring& name);
-		std::function<void>& GetEndEvent(const std::wstring& name);*/
+		std::function<void()>& GetStartEvent(const std::wstring& name);
+		std::function<void()>& GetCompleteEvent(const std::wstring& name);
+		std::function<void()>& GetEndEvent(const std::wstring& name);
+
+		bool IsComplete() { return mActiveAnimation->IsComplete(); }
+
+	private:
+		void recursive_directory(const std::wstring& path, std::vector<Image*>& images, UINT& width, UINT& height, UINT& fileCount);
 
 	private:
 		std::map<std::wstring, Animation*> mAnimations;
 		std::map<std::wstring, Events*> mEvents;
+
 		Animation* mActiveAnimation;
 		Image* mSpriteSheet;
 		bool mbLoop;

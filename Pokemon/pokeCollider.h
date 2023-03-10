@@ -16,14 +16,18 @@ namespace poke
 
         void SetCenter(Vector2 center) { mCenter = center; }
         void SetSize(Vector2 size) { mSize = size; }
-        void SetScale(Vector2 pos) { mScale = pos; }
+
+        void OnCollisionEnter(Collider* other);
+        void OnCollisionStay(Collider* other);
+        void OnCollisionExit(Collider* other);
 
         Vector2 GetPos() { return mPos; }
         Vector2 GetSize() { return mSize; }     
          
     private:
+        static UINT ColliderNumber;
+        UINT mID;
         Vector2 mCenter;
-        Vector2 mScale;
         Vector2 mPos;
         Vector2 mSize;
     };

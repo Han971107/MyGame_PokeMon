@@ -7,6 +7,7 @@
 #include <memory.h>
 #include <tchar.h>
 #include <assert.h>
+#include <math.h>
 
 #include <string>
 #include <vector>

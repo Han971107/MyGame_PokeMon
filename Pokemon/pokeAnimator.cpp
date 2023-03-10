@@ -19,6 +19,11 @@ namespace poke
 			delete animation.second;
 			animation.second = nullptr;
 		}
+		for (auto events : mEvents)
+		{
+			delete events.second;
+			events.second = nullptr;
+		}
 	}
 
 	void Animator::Initialize()
@@ -31,9 +36,19 @@ namespace poke
 		{
 			mActiveAnimation->Update();
 
-			if (mbLoop && mActiveAnimation->IsComplete())
+			if (mActiveAnimation->IsComplete())
 			{
-				mActiveAnimation->Reset();
+				if (mbLoop && mActiveAnimation->IsComplete())
+				{
+					Animator::Events* events
+						= FindEvents(mActiveAnimation->GetName());
+
+					if (events != nullptr)
+						events->mCompleteEvent();
+				}
+
+				if (mbLoop && mActiveAnimation->IsComplete())
+					mActiveAnimation->Reset();
 			}
 		}
 	}
@@ -51,32 +66,8 @@ namespace poke
 
 	}
 
-	void Animator::CreateAnimation(const std::wstring& name
-		, Image* sheet, Vector2 leftTop
-		, UINT column, UINT row, UINT spriteLength
-		, Vector2 offset, float duration)
+	void Animator::recursive_directory(const std::wstring& path, std::vector<Image*>& images, UINT& width, UINT& height, UINT& fileCount)
 	{
-		Animation* animation = FindAnimation(name);
-
-		if (animation != nullptr)
-			return;
-
-		animation = new Animation();
-		animation->CreateSpriteSheet(sheet, leftTop, column, row, spriteLength, offset, duration);
-		animation->SetName(name);
-		animation->SetAnimator(this);
-
-		mAnimations.insert(std::make_pair(name, animation));
-	}
-
-	void Animator::CreateAnimations(const std::wstring& path, Vector2 offset, float duration)
-	{
-		UINT width = 0;
-		UINT height = 0;
-		UINT fileCount = 0;
-
-		std::filesystem::path fs(path);
-		std::vector<Image*> images = {};
 		for (const auto& p : std::filesystem::recursive_directory_iterator(path))
 		{
 			std::wstring fileName = p.path().filename();
@@ -99,6 +90,38 @@ namespace poke
 			}
 			fileCount++;
 		}
+	}
+
+	void Animator::CreateAnimation(const std::wstring& name
+		, Image* sheet, Vector2 leftTop
+		, UINT column, UINT row, UINT spriteLength
+		, Vector2 offset, float duration)
+	{
+		Animation* animation = FindAnimation(name);
+
+		if (animation != nullptr)
+			return;
+
+		animation = new Animation();
+		animation->CreateSpriteSheet(sheet, leftTop, column, row, spriteLength, offset, duration);
+		animation->SetAnimationName(name);
+		animation->SetAnimator(this);
+
+		mAnimations.insert(std::make_pair(name, animation));
+		Events* event = new Events();
+		mEvents.insert(std::make_pair(name, event));
+	}
+
+	void Animator::CreateAnimations(const std::wstring& path, Vector2 offset, float duration)
+	{
+		UINT width = 0;
+		UINT height = 0;
+		UINT fileCount = 0;
+
+		std::filesystem::path fs(path);
+		std::vector<Image*> images = {};
+
+		recursive_directory(path, images, width, height, fileCount);
 
 		std::wstring key = fs.parent_path().filename();
 		key += fs.filename();
@@ -136,27 +159,67 @@ namespace poke
 
 	void Animator::Play(const std::wstring& name, bool loop)
 	{
+		/*if (mActiveAnimation != nullptr)
+		{
+			Animator::Events* prevents
+				= FindEvents(mActiveAnimation->GetName());
+
+			if (prevents != nullptr)
+				prevents->mEndEvent();
+		}
+
+		mActiveAnimation = FindAnimation(name);
+		mActiveAnimation->Reset();
+		mbLoop = loop;
+
+		Animator::Events* events
+			= FindEvents(mActiveAnimation->GetName());
+
+		if (events != nullptr)
+			events->mStartEvent();*/
+
 		mActiveAnimation = FindAnimation(name);
 		mbLoop = loop;
 	}
 
 	Animator::Events* Animator::FindEvents(const std::wstring& name)
 	{
-		return nullptr;
+		std::map<std::wstring, Events*>::iterator iter
+			= mEvents.find(name);
+
+		if (iter == mEvents.end())
+			return nullptr;
+
+		return iter->second;
 	}
 
-	//std::function<void>& Animator::GetStartEvent(const std::wstring& name)
-	//{
-	//	// TODO: 여기에 return 문을 삽입합니다.
-	//}
+	std::function<void()>& Animator::GetStartEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
 
-	//std::function<void>& Animator::GetCompleteEvent(const std::wstring& name)
-	//{
-	//	// TODO: 여기에 return 문을 삽입합니다.
-	//}
+		Animator::Events* events
+			= FindEvents(animation->GetAnimationName());
 
-	//std::function<void>& Animator::GetEndEvent(const std::wstring& name)
-	//{
-	//	// TODO: 여기에 return 문을 삽입합니다.
-	//}
+		return events->mStartEvent.mEvent;
+	}
+
+	std::function<void()>& Animator::GetCompleteEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
+
+		Animator::Events* events
+			= FindEvents(animation->GetAnimationName());
+
+		return events->mCompleteEvent.mEvent;
+	}
+
+	std::function<void()>& Animator::GetEndEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
+
+		Animator::Events* events
+			= FindEvents(animation->GetAnimationName());
+
+		return events->mEndEvent.mEvent; 
+	}
 }

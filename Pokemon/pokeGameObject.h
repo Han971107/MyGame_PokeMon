@@ -4,6 +4,8 @@
 
 namespace poke
 {
+	class Collider;
+
 	class GameObject : public Entity
 	{
 	public:
@@ -16,9 +18,9 @@ namespace poke
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		//virtual void OnCollisionEnter(Collider* other);
-		//virtual void OnCollisionStay(Collider* other);
-		//virtual void OnCollisionExit(Collider* other);
+		virtual void OnCollisionEnter(Collider* other);
+		virtual void OnCollisionStay(Collider* other);
+		virtual void OnCollisionExit(Collider* other);
 
 		template <typename T>
 		T* AddComponent()

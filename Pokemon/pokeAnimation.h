@@ -37,12 +37,14 @@ namespace poke
 
 		bool IsComplete() { return mbComplete; }
 		void SetAnimator(Animator* animator) { mAnimator = animator; }
-
+		void SetAnimationName(const std::wstring& name) { mName = name; }
+		std::wstring& GetAnimationName() { return mName; }
 
 	private:
 		Animator* mAnimator;
 		Image* mSheetImage;
 		std::vector<Sprite> mSpriteSheet;
+		std::wstring mName;
 		float mTime;
 		bool mbComplete;
 		int mSpriteIndex;

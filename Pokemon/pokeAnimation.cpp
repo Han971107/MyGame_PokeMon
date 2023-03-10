@@ -4,6 +4,7 @@
 #include "pokeGameObject.h"
 #include "pokeAnimator.h"
 #include "pokeTransform.h"
+#include "pokeCamera.h"
 
 
 namespace poke
@@ -14,6 +15,7 @@ namespace poke
         , mTime(0.0f)
         , mbComplete(false)
         , mSpriteIndex(0)
+        , mName(L"")
     {
 
     }
@@ -57,6 +59,7 @@ namespace poke
         // 캐릭터의 발을 기준으로 포지션을 계산
 
         Vector2 pos = tr->GetPos();
+        pos = Camera::CalculatePos(pos);
         pos += mSpriteSheet[mSpriteIndex].offset;
         pos.x -= mSpriteSheet[mSpriteIndex].size.x / 2.0f;
         pos.y -= mSpriteSheet[mSpriteIndex].size.y;

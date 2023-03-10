@@ -45,7 +45,9 @@ namespace poke
 		mAnimator->CreateAnimation(L"BackIdle", mImage, Vector2{ 0.0f, 160.f }, 4, 4, 1, Vector2::Zero, 0.0f);
 
 		// Play
-		mAnimator->Play(L"ForwardIdle", false);	
+		//mAnimator->GetCompleteEvent(L"ForwardIdle") = std::bind(&Red::idleCompleteEvent, this);
+		mAnimator->Play(L"ForwardIdle", true);
+
 
 		GameObject::Initialize();
 	}
@@ -84,6 +86,21 @@ namespace poke
 	void Red::Release()
 	{
 		GameObject::Release();
+	}
+
+	void Red::OnCollisionEnter(Collider* other)
+	{
+		int a = 0;
+	}
+
+	void Red::OnCollisionStay(Collider* other)
+	{
+
+	}
+
+	void Red::OnCollisionExit(Collider* other)
+	{
+
 	}
 
 	void Red::Idle()
@@ -188,6 +205,11 @@ namespace poke
 		}
 
 		tr->SetPos(pos);
+	}
+
+	void Red::idleCompleteEvent()
+	{
+		int a = 0;
 	}
 
 }

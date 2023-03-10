@@ -1,5 +1,6 @@
 #include "pokeGameObject.h"
 #include "pokeTransform.h"
+#include "pokeCollider.h"
 
 
 namespace poke
@@ -56,4 +57,20 @@ namespace poke
 	{
 
 	}
+
+	void GameObject::OnCollisionEnter(Collider* other)
+	{
+
+	}
+
+	void GameObject::OnCollisionStay(Collider* other)
+	{
+
+	}
+
+	void GameObject::OnCollisionExit(Collider* other)
+	{
+
+	}
+
 }
