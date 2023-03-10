@@ -31,6 +31,8 @@ namespace poke
         void OnCollisionStay(Collider* other) override;
         void OnCollisionExit(Collider* other) override;
 
+        void SetRedState(eRedState state) { mState = state; }
+
 
     private:
         // 함수 이름이 앞에 소문자인건 private 이라는 뜻이다

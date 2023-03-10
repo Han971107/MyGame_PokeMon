@@ -8,6 +8,7 @@
 #include "pokeCollisionManager.h"
 #include "pokeCamera.h"
 #include "pokeObject.h"
+#include "pokeAnimator.h"
 
 
 namespace poke
@@ -47,11 +48,6 @@ namespace poke
 
 	void PlayScene::Update()
 	{
-		if (Input::GetKeyState(eKeyCode::N) == eKeyState::Down)
-		{
-			SceneManager::LoadScene(eSceneType::Title);
-		}
-
 		Scene::Update();
 	}
 
@@ -67,11 +63,13 @@ namespace poke
 
 	void PlayScene::OnEnter()
 	{
+		mRed->GetComponent<Animator>()->Play(L"ForwardIdle", false);
+		mRed->SetRedState(poke::Red::eRedState::Idle);
 		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
 	}
 
 	void PlayScene::OnExit()
 	{
-		//mRed->SetPos(Vector2{ 0.0f, 0.0f });
+		mRed->GetComponent<Transform>()->SetPos(Vector2{ 170.0f, 250.0f });
 	}
 }

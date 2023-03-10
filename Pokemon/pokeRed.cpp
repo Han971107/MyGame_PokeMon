@@ -25,7 +25,6 @@ namespace poke
 	void Red::Initialize()
 	{
 		Transform* tr = GetComponent<Transform>();
-		tr->SetPos(Vector2{ 170.0f, 250.0f });
 		mCollider->SetSize(Vector2{ 60.f, 80.f });
 		mCollider->SetCenter(Vector2{ -30.0f, -80.0f });
 

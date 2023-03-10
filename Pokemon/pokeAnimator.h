@@ -62,6 +62,7 @@ namespace poke
 		std::function<void()>& GetEndEvent(const std::wstring& name);
 
 		bool IsComplete() { return mActiveAnimation->IsComplete(); }
+		Animation* GetActiveAnimation() { return mActiveAnimation; }
 
 	private:
 		void recursive_directory(const std::wstring& path, std::vector<Image*>& images, UINT& width, UINT& height, UINT& fileCount);
