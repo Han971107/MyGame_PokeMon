@@ -27,6 +27,7 @@ namespace poke
 		Transform* tr = GetComponent<Transform>();
 		mCollider->SetSize(Vector2{ 60.f, 80.f });
 		mCollider->SetCenter(Vector2{ -30.0f, -80.0f });
+		mCollider->SetColliderPos(tr->GetPos());
 
 		Image* mImage = ResourceManager::Load<Image>(L"Red", L"..\\Resources\\PlayerStage1.bmp");
 		mAnimator->CreateAnimation(L"LeftRun", mImage, Vector2::Zero, 4, 4, 4, Vector2::Zero, 0.2);

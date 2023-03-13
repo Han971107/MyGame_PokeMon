@@ -17,9 +17,13 @@ namespace poke
 		mScenes.resize((UINT)eSceneType::End);
 
 		mScenes[(UINT)eSceneType::Intro] = new IntroScene();
+		mScenes[(UINT)eSceneType::Intro]->SetName(L"IntroScene");
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
+		mScenes[(UINT)eSceneType::Title]->SetName(L"TitleScene");
 		mScenes[(UINT)eSceneType::Home] = new HomeScene();
+		mScenes[(UINT)eSceneType::Home]->SetName(L"HomeScene");
 		mScenes[(UINT)eSceneType::Play] = new PlayScene();
+		mScenes[(UINT)eSceneType::Play]->SetName(L"PlayScene");
 
 		for (Scene* scene : mScenes)
 		{
@@ -44,6 +48,7 @@ namespace poke
 
 	void SceneManager::Destroy()
 	{
+
 	}
 
 	void SceneManager::Release()

@@ -41,7 +41,7 @@ namespace poke
 				if (mbLoop && mActiveAnimation->IsComplete())
 				{
 					Animator::Events* events
-						= FindEvents(mActiveAnimation->GetName());
+						= FindEvents(mActiveAnimation->GetAnimationName());
 
 					if (events != nullptr)
 						events->mCompleteEvent();
@@ -108,6 +108,8 @@ namespace poke
 		animation->SetAnimator(this);
 
 		mAnimations.insert(std::make_pair(name, animation));
+
+		// 애니메이션이 만들어지면서 이벤트도 생성
 		Events* event = new Events();
 		mEvents.insert(std::make_pair(name, event));
 	}
@@ -131,16 +133,16 @@ namespace poke
 		int index = 0;
 		for (Image* image : images)
 		{
-			int centerX = (width - image->GetWidth()) / 2;
-			int centerY = (height - image->GetHeight());
+			int cneterX = (width - image->GetWidth()) / 2;
+			int cneterY = (height - image->GetHeight());
 
 			BitBlt(mSpriteSheet->GetHdc()
-				, width * index + centerX
-				, 0 + centerY
+				, width * index + cneterX
+				, 0 + cneterY
 				, image->GetWidth(), image->GetHeight()
 				, image->GetHdc(), 0, 0, SRCCOPY);
 
-			index++;
+			++index;
 		}
 
 		CreateAnimation(key, mSpriteSheet, Vector2::Zero, index, 1, index, offset, duration);
@@ -159,10 +161,10 @@ namespace poke
 
 	void Animator::Play(const std::wstring& name, bool loop)
 	{
-		/*if (mActiveAnimation != nullptr)
+		if (mActiveAnimation != nullptr)
 		{
 			Animator::Events* prevents
-				= FindEvents(mActiveAnimation->GetName());
+				= FindEvents(mActiveAnimation->GetAnimationName());
 
 			if (prevents != nullptr)
 				prevents->mEndEvent();
@@ -173,13 +175,10 @@ namespace poke
 		mbLoop = loop;
 
 		Animator::Events* events
-			= FindEvents(mActiveAnimation->GetName());
+			= FindEvents(mActiveAnimation->GetAnimationName());
 
 		if (events != nullptr)
-			events->mStartEvent();*/
-
-		mActiveAnimation = FindAnimation(name);
-		mbLoop = loop;
+			events->mStartEvent();
 	}
 
 	Animator::Events* Animator::FindEvents(const std::wstring& name)
@@ -220,6 +219,6 @@ namespace poke
 		Animator::Events* events
 			= FindEvents(animation->GetAnimationName());
 
-		return events->mEndEvent.mEvent; 
+		return events->mEndEvent.mEvent;
 	}
 }

@@ -32,11 +32,15 @@ namespace poke
 		void Initialize();
 		void Update();
 		void Render(HDC hdc);
+		void AnimBackGroundRender(HDC hdc);
 		void CreateSpriteSheet(Image* sheet, Vector2 leftTop, UINT column, UINT row, UINT spriteLength, Vector2 offset, float duration);
 		void Reset();
 
 		bool IsComplete() { return mbComplete; }
+
 		void SetAnimator(Animator* animator) { mAnimator = animator; }
+		Animator* GetAnimator() { return mAnimator; }
+
 		void SetAnimationName(const std::wstring& name) { mName = name; }
 		std::wstring& GetAnimationName() { return mName; }
 

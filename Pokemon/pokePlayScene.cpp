@@ -25,13 +25,19 @@ namespace poke
 		Scene::Initialize();
 
 		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
-		mBg->SetName(L"PlayScene");
-		mBg->SetImage(L"PlayScene", L"..\\Resources\\PlayScene.bmp");
+		mBg->SetName(L"PlayImage");
+		mBg->SetImage(L"PlayImage", L"..\\Resources\\PlayScene.bmp");
+		mBg->GetComponent<Transform>()->SetScale(Vector2{ 2.0f, 2.0f });
 	}
 
 	void PlayScene::Update()
 	{
 		Scene::Update();
+
+		if (Input::GetKeyDown(eKeyCode::N))
+		{
+			SceneManager::LoadScene(eSceneType::Home);
+		}
 	}
 
 	void PlayScene::Render(HDC hdc)

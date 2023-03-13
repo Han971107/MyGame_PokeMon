@@ -23,8 +23,8 @@ namespace poke
 		Scene::Initialize();
 
 		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
-		mBg->SetName(L"TitleScene");
-		mBg->SetImage(L"TitleScene", L"..\\Resources\\TitleScene.bmp");	
+		mBg->SetName(L"TitleImage");
+		mBg->SetImage(L"TitleImage", L"..\\Resources\\TitleScene.bmp");	
 	}
 
 	void TitleScene::Update()

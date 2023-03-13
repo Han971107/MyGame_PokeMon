@@ -56,6 +56,7 @@ namespace poke
 	{
 		Update();
 		Render();
+		SceneManager::Destroy();
 	}
 
 	void Application::Update()
@@ -83,10 +84,11 @@ namespace poke
 
 	void Application::clear()
 	{
-		HBRUSH grayBrush = CreateSolidBrush(RGB(121, 121, 121));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHDC, grayBrush);
+		//HBRUSH grayBrush = CreateSolidBrush(RGB(121, 121, 121));
+		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
+		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHDC, blackBrush);
 		Rectangle(mBackHDC, -1, -1, mWidth + 1, mHeight + 1);
 		SelectObject(mBackHDC, oldBrush);
-		DeleteObject(grayBrush);
+		DeleteObject(blackBrush);
 	}
 }

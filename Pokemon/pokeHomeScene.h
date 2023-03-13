@@ -6,6 +6,7 @@ namespace poke
 {
 	class BackGround;
 	class Red;
+	class Collider;
 
 	class HomeScene : public Scene
 	{
@@ -25,6 +26,7 @@ namespace poke
 	private:
 		Red* mRed;
 		BackGround* mBg;
+		Collider* mDoorCollider;
 	};
 }
 

@@ -83,6 +83,9 @@
     <Filter Include="02_Contents\Scene\PlayScene">
       <UniqueIdentifier>{accf224a-0a30-419e-9d01-616349f5cdbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02_Contents\Anim_BackGround">
+      <UniqueIdentifier>{205d05e0-53ae-4c19-aa4b-507c53fc7e58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -181,7 +184,10 @@
     <ClInclude Include="pokeCamera.h">
       <Filter>01_Engine\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="pokePlayScene.h" />
+    <ClInclude Include="pokePlayScene.h">
+      <Filter>02_Contents\Scene\PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeAnimBackGround.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -259,7 +265,10 @@
     <ClCompile Include="pokeCamera.cpp">
       <Filter>01_Engine\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="pokePlayScene.cpp" />
+    <ClCompile Include="pokePlayScene.cpp">
+      <Filter>02_Contents\Scene\PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeAnimBackGround.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc">

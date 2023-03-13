@@ -28,13 +28,13 @@ namespace poke
 		Scene::Initialize();
 
 		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
-		mBg->SetName(L"HomeScene");
-		mBg->SetImage(L"HomeScene", L"..\\Resources\\HomeScene.bmp");
-		Collider* doorCollider = mBg->AddComponent<Collider>();
-		doorCollider->SetSize(Vector2{ 100.f, 50.f });
-		doorCollider->SetCenter(Vector2{ 180.f, 550.f });
-		doorCollider->SetColliderName(L"PlaySceneDoor");
-
+		mBg->SetName(L"HomeImage");
+		mBg->SetImage(L"HomeImage", L"..\\Resources\\HomeScene.bmp");
+		mDoorCollider = mBg->AddComponent<Collider>();
+		mDoorCollider->SetSize(Vector2{ 100.f, 50.f });
+		mDoorCollider->SetCenter(Vector2{ 180.f, 550.f });
+		mDoorCollider->SetColliderPos(mBg->GetComponent<Transform>()->GetPos());
+		mDoorCollider->SetColliderName(L"PlaySceneDoor");
 
 		mRed = Object::Instantiate<Red>(Vector2{ 170.0f, 250.0f }, eLayerType::Player);
 		mRed->SetName(L"Player");
@@ -42,18 +42,12 @@ namespace poke
 		// 카메라 타겟을 플레이어로 고정
 		//Camera::SetTarget(mRed);
 
-		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
-		
+		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);	
 	}
 
 	void HomeScene::Update()
 	{
 		Scene::Update();
-
-		if (Input::GetKeyDown(eKeyCode::N))
-		{
-			SceneManager::LoadScene(eSceneType::Play);
-		}
 	}
 
 	void HomeScene::Render(HDC hdc)

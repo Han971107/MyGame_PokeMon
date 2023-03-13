@@ -24,6 +24,7 @@ namespace poke
         Vector2 GetPos() { return mPos; }
         Vector2 GetSize() { return mSize; }   
 
+        void SetColliderPos(Vector2 pos) { mPos = pos; }
         void SetColliderName(const std::wstring& colliderName) { mColliderName = colliderName; }
         std::wstring& GetColliderName() { return mColliderName; }
          

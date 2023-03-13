@@ -3,7 +3,7 @@
 
 namespace poke
 {
-    class BackGround;
+    class AnimBackGround;
     class Animator;
 
     class IntroScene : public Scene
@@ -21,7 +21,7 @@ namespace poke
         virtual void OnExit() override;
 
     private:
-        BackGround* mBg;
+        AnimBackGround* mAbg;
         Animator* mAnimator;
     };
 }

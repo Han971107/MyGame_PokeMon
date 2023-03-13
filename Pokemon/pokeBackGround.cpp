@@ -28,22 +28,14 @@ namespace poke
 
 	void BackGround::Render(HDC hdc)
 	{
-		Animator* anim = GetComponent<Animator>();
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pos = tr->GetPos();
+		Vector2 scale = tr->GetScale();
 
-		if (anim != nullptr)
-		{
-			GameObject::Render(hdc);
-		}
-		else
-		{
-			Transform* tr = GetComponent<Transform>();
-			Vector2 pos = tr->GetPos();
-			Vector2 scale = tr->GetScale();
+		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
 
-			BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
-
-			GameObject::Render(hdc);
-		}
+		// comp render는 순서상 마지막에 그려야한다.
+		GameObject::Render(hdc);
 	}
 
 	void BackGround::Release()

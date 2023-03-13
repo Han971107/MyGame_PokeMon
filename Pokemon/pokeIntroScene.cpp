@@ -2,7 +2,7 @@
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
 #include "pokeResourceManager.h"
-#include "pokeBackGround.h"
+#include "pokeAnimBackGround.h"
 #include "pokeAnimator.h"
 #include "pokeTransform.h"
 #include "pokeObject.h"
@@ -11,6 +11,8 @@
 namespace poke
 {
 	IntroScene::IntroScene()
+		: mAbg(nullptr)
+		, mAnimator(nullptr)
 	{
 		
 	}
@@ -21,16 +23,17 @@ namespace poke
 
 	void IntroScene::Initialize()
 	{
+		// mAbg -> member Animantion back ground
+
 		Scene::Initialize();
 
-		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
-		mBg->SetName(L"IntroScene");
-		mBg->SetImage(L"IntroScene", L"..\\Resources\\IntroScene.bmp");
-		mBg->GetComponent<Transform>()->SetScale(Vector2{ 1.4f, 2.0f });
-
-		mAnimator = mBg->AddComponent<Animator>();
-		mAnimator->CreateAnimation(L"IntroScene", mBg->GetImage(), Vector2::Zero, 4, 2, 4, Vector2{ 280.f, 1.0f}, 1.5f);
-		mAnimator->Play(L"IntroScene", true);
+		mAbg = Object::Instantiate<AnimBackGround>(eLayerType::BG);
+		mAbg->GetComponent<Transform>()->SetScale(Vector2{ 3.2f, 3.4f });		
+		
+		mAnimator = mAbg->AddComponent<Animator>();
+		mAbg->SetAnimator(mAnimator);
+		mAnimator->CreateAnimations(L"..\\Resources\\IntroImage\\", Vector2{ 130.f, 1.0f }, 0.067f);
+		mAnimator->Play(L"IntroImage", true);
 	}
 
 	void IntroScene::Update()
