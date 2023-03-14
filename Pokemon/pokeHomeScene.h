@@ -24,7 +24,8 @@ namespace poke
 		virtual void OnExit() override;
 
 	private:
-
+		void resetOnEnter();
+		void resetOnExit();
 
 	private:
 		Red* mRed;

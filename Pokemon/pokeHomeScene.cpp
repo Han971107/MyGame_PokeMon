@@ -63,12 +63,27 @@ namespace poke
 
 	void HomeScene::OnEnter()
 	{
-		
+		resetOnEnter();
 	}
 
 	void HomeScene::OnExit()
 	{
-		
+		resetOnExit();
 	}
 
+	void HomeScene::resetOnEnter()
+	{
+		mRed->GetComponent<Collider>()->SetColliderPos(mRed->GetComponent<Transform>()->GetPos());
+		mDoorCollider->SetColliderPos(mBg->GetComponent<Transform>()->GetPos());
+		mRed->GetComponent<Animator>()->Play(L"ForwardIdle", false);
+		mRed->SetRedState(poke::Red::eRedState::Idle);
+		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
+	}
+
+	void HomeScene::resetOnExit()
+	{
+		mRed->GetComponent<Transform>()->SetPos(Vector2{ 170.0f, 250.0f });
+		mRed->GetComponent<Collider>()->SetColliderPos(mRed->GetComponent<Transform>()->GetPos());
+		mDoorCollider->SetColliderPos(mBg->GetComponent<Transform>()->GetPos());
+	}
 }
