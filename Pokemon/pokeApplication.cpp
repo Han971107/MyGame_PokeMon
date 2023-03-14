@@ -4,14 +4,20 @@
 #include "pokeInput.h"
 #include "pokeCollisionManager.h"
 #include "pokeCamera.h"
-
 #include "pokeImage.h"
+
 
 namespace poke
 {
 	Application::Application()
 		: mHwnd(NULL)
 		, mHdc(NULL)
+		, mImage(nullptr)
+		, mBackBuffer(NULL)
+		, mBackHDC(NULL)
+		, mWidth(0)
+		, mHeight(0)
+		, mPos(Vector2::One)
 	{
 
 	}
@@ -43,11 +49,6 @@ namespace poke
 		ShowWindow(hWnd, true);
 
 		mImage = Image::CreateTexture(L"BackBuffer", mWidth, mHeight);
-
-		//mBackBuffer = CreateCompatibleBitmap(mHdc, mWidth, mHeight);
-		//mBackHDC = CreateCompatibleDC(mHdc);
-		//HBITMAP defaultBitmap = (HBITMAP)SelectObject(mBackHDC, mBackBuffer);
-		//DeleteObject(defaultBitmap);
 
 		Time::Initialize();
 		Input::Initialize();

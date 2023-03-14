@@ -41,7 +41,6 @@ namespace poke
 
 		UINT mWidth;
 		UINT mHeight;
-
 		Vector2 mPos;
 	};
 }
