@@ -39,7 +39,6 @@ namespace poke
 		mRed = Object::Instantiate<Red>(Vector2{ 170.0f, 250.0f }, eLayerType::Player);
 		mRed->SetName(L"Red");
 
-
 		// 카메라 타겟을 플레이어로 고정
 		Camera::SetTarget(mRed);
 

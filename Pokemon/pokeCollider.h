@@ -30,11 +30,10 @@ namespace poke
          
     private:
         static UINT ColliderNumber;
+        std::wstring mColliderName;
         UINT mID;
         Vector2 mCenter;
         Vector2 mPos;
-        Vector2 mSize;
-
-        std::wstring mColliderName;
+        Vector2 mSize;       
     };
 }

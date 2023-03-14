@@ -43,6 +43,7 @@ namespace poke
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		//Camera::Render(hdc);
 	}
 
 	void PlayScene::Release()

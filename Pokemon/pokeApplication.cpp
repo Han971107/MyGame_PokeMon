@@ -82,6 +82,9 @@ namespace poke
 		Input::Render(mImage->GetHdc());
 		SceneManager::Render(mImage->GetHdc());
 
+		// Camera effect가 true일 경우, 모든 씬을 그리고 렌더해준다
+		Camera::Render(mImage->GetHdc());
+
 		// 백버퍼에 있는 그림을 원본버퍼에 그려줘야한다.
 		BitBlt(mHdc, 0, 0, mWidth, mHeight, mImage->GetHdc(), 0, 0, SRCCOPY);
 	}

@@ -8,8 +8,7 @@ namespace poke
     class Animator;
 
     class AnimBackGround : public GameObject
-    {
-       
+    {  
         public:
             AnimBackGround();
             virtual ~AnimBackGround();

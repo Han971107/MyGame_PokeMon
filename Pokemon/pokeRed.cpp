@@ -6,6 +6,9 @@
 #include "pokeTransform.h"
 #include "pokeAnimator.h"
 #include "pokeCollider.h"
+#include "pokeCamera.h"
+
+const double RED_SPEED = 200;
 
 
 namespace poke
@@ -47,7 +50,6 @@ namespace poke
 		// Play
 		//mAnimator->GetCompleteEvent(L"ForwardIdle") = std::bind(&Red::idleCompleteEvent, this);
 		mAnimator->RedPlay(L"ForwardIdle", true);
-
 
 		GameObject::Initialize();
 	}
@@ -92,6 +94,7 @@ namespace poke
 	{
 		if (other->GetColliderName() == L"PlaySceneDoor")
 		{
+			Camera::FadeIn(2.0f);
 			SceneManager::LoadScene(eSceneType::Play);
 		}
 	}
@@ -126,7 +129,7 @@ namespace poke
 		if (Input::GetKeyHold(eKeyCode::LEFT))
 		{
 			mAnimator->RedPlay(L"LeftRun", true);
-			pos.x -= 120.0f * Time::DeltaTime();
+			pos.x -= RED_SPEED * Time::DeltaTime();
 		}
 		if (Input::GetKeyUp(eKeyCode::LEFT)) {
 			mState = eRedState::Idle;
@@ -149,7 +152,7 @@ namespace poke
 		if (Input::GetKeyHold(eKeyCode::RIGHT))
 		{
 			mAnimator->RedPlay(L"RightRun", true);
-			pos.x += 120.0f * Time::DeltaTime();
+			pos.x += RED_SPEED * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::RIGHT)) {
 			mState = eRedState::Idle;
@@ -177,7 +180,7 @@ namespace poke
 		if (Input::GetKeyHold(eKeyCode::UP))
 		{
 			mAnimator->RedPlay(L"BackRun", true);
-			pos.y -= 120.0f * Time::DeltaTime();
+			pos.y -= RED_SPEED * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::UP)) {
 			mState = eRedState::Idle;
@@ -200,7 +203,7 @@ namespace poke
 		if (Input::GetKeyHold(eKeyCode::DOWN))
 		{
 			mAnimator->RedPlay(L"ForwardRun", true);
-			pos.y += 120.0f * Time::DeltaTime();
+			pos.y += RED_SPEED * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::DOWN)) {
 			mState = eRedState::Idle;
