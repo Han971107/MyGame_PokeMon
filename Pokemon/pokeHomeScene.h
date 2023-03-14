@@ -24,6 +24,9 @@ namespace poke
 		virtual void OnExit() override;
 
 	private:
+
+
+	private:
 		Red* mRed;
 		BackGround* mBg;
 		Collider* mDoorCollider;

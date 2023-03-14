@@ -25,6 +25,13 @@ namespace poke
             Animator* GetAnimator() { return mAnimator; }
             void SetAnimator(Animator* animator) { mAnimator = animator; }
 
+            // IntroScene
+            void CallIntroAnimCompleteEvent();
+
+        private:
+            // IntroScene
+            void introAnimCompleteEvent();
+
         private:
             Image* mImage;
             Animator* mAnimator;

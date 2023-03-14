@@ -60,6 +60,7 @@ namespace poke
 
         Vector2 pos = tr->GetPos();
         pos = Camera::CalculatePos(pos);
+
         pos += mSpriteSheet[mSpriteIndex].offset;
         pos.x -= mSpriteSheet[mSpriteIndex].size.x / 2.0f;
         pos.y -= mSpriteSheet[mSpriteIndex].size.y;

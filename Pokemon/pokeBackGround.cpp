@@ -2,6 +2,9 @@
 #include "pokeImage.h"
 #include "pokeTransform.h"
 #include "pokeAnimator.h"
+#include "pokeCamera.h"
+#include "pokeHomeScene.h"
+#include "pokeSceneManager.h"
 
 
 namespace poke
@@ -28,11 +31,24 @@ namespace poke
 
 	void BackGround::Render(HDC hdc)
 	{
-		Transform* tr = GetComponent<Transform>();
-		Vector2 pos = tr->GetPos();
-		Vector2 scale = tr->GetScale();
+		if (mImage->GetKey() == L"..\\Resources\\HomeScene.bmp")
+		{
+			Transform* tr = GetComponent<Transform>();
+			Vector2 pos = tr->GetPos();
+			Vector2 scale = tr->GetScale();
 
-		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
+			pos = Camera::CalculatePos(pos);
+
+			BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);
+		}
+		else
+		{
+			Transform* tr = GetComponent<Transform>();
+			Vector2 pos = tr->GetPos();
+			Vector2 scale = tr->GetScale();
+
+			BitBlt(hdc, pos.x, pos.y, mImage->GetWidth() * scale.x, mImage->GetHeight() * scale.y, mImage->GetHdc(), 0, 0, SRCCOPY);	// stretchblt 함수로 수정할 것
+		}
 
 		// comp render는 순서상 마지막에 그려야한다.
 		GameObject::Render(hdc);

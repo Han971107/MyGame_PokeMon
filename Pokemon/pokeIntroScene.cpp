@@ -28,12 +28,22 @@ namespace poke
 		Scene::Initialize();
 
 		mAbg = Object::Instantiate<AnimBackGround>(eLayerType::BG);
-		mAbg->GetComponent<Transform>()->SetScale(Vector2{ 3.2f, 3.4f });		
-		
+		mAbg->GetComponent<Transform>()->SetScale(Vector2{ 3.2f, 3.4f });
+
 		mAnimator = mAbg->AddComponent<Animator>();
 		mAbg->SetAnimator(mAnimator);
-		mAnimator->CreateAnimations(L"..\\Resources\\IntroImage\\", Vector2{ 130.f, 1.0f }, 0.067f);
+		mAnimator->CreateAnimations(L"..\\Resources\\IntroImage\\", Vector2{ 130.f, 1.0f }, 0.067f); //0.067f
+
+		// 规过(1)
+		mAnimator->GetCompleteEvent(L"IntroImage") = std::bind(&AnimBackGround::CallIntroAnimCompleteEvent, mAbg);
 		mAnimator->Play(L"IntroImage", true);
+
+		/* 规过(2)
+		std::function<void(AnimBackGround*)> func = &AnimBackGround::CallIntroAnimCompleteEvent;
+		func(mAbg);*/
+
+		/* 规过(3)
+		mAbg->CallIntroAnimCompleteEvent();*/
 	}
 
 	void IntroScene::Update()

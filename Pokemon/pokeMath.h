@@ -37,7 +37,6 @@ struct Vector2
 
 	Vector2(const Vector2&) = default;
 	Vector2& operator=(const Vector2&) = default;
-
 	Vector2(Vector2&&) = default;
 	Vector2& operator=(Vector2&&) = default;
 
@@ -64,9 +63,17 @@ struct Vector2
 	Vector2 operator*(const Vector2& other)
 	{
 		Vector2 temp;
-
 		temp.x = x * other.x;
 		temp.y = y * other.y;
+
+		return temp;
+	}
+
+	Vector2 operator*(const float ratio)
+	{
+		Vector2 temp;
+		temp.x = x * ratio;
+		temp.y = y * ratio;
 
 		return temp;
 	}
@@ -74,7 +81,6 @@ struct Vector2
 	Vector2 operator/(const float ratio)
 	{
 		Vector2 temp;
-
 		temp.x = x / ratio;
 		temp.y = y / ratio;
 
@@ -97,14 +103,6 @@ struct Vector2
 		return *this;
 	}
 
-	Vector2& operator*=(const Vector2& other)
-	{
-		x *= other.x;
-		y *= other.x;
-
-		return *this;
-	}
-
 	friend UINT operator*(UINT lhs, Vector2& rhs)
 	{
 		UINT temp;
@@ -113,12 +111,10 @@ struct Vector2
 		return temp;
 	}
 
-	Vector2& operator/=(const Vector2& other)
+	void Clear()
 	{
-		x /= other.x;
-		y /= other.y;
-
-		return *this;
+		x = 0.0f;
+		y = 0.0f;
 	}
 
 	float Length()

@@ -5,6 +5,7 @@
 #include "pokeCollisionManager.h"
 #include "pokeCamera.h"
 
+#include "pokeImage.h"
 
 namespace poke
 {
@@ -41,10 +42,12 @@ namespace poke
 			, 0);
 		ShowWindow(hWnd, true);
 
-		mBackBuffer = CreateCompatibleBitmap(mHdc, mWidth, mHeight);
-		mBackHDC = CreateCompatibleDC(mHdc);
-		HBITMAP defaultBitmap = (HBITMAP)SelectObject(mBackHDC, mBackBuffer);
-		DeleteObject(defaultBitmap);
+		mImage = Image::CreateTexture(L"BackBuffer", mWidth, mHeight);
+
+		//mBackBuffer = CreateCompatibleBitmap(mHdc, mWidth, mHeight);
+		//mBackHDC = CreateCompatibleDC(mHdc);
+		//HBITMAP defaultBitmap = (HBITMAP)SelectObject(mBackHDC, mBackBuffer);
+		//DeleteObject(defaultBitmap);
 
 		Time::Initialize();
 		Input::Initialize();
@@ -74,21 +77,21 @@ namespace poke
 		// clear
 		clear();
 
-		Time::Render(mBackHDC);
-		Input::Render(mBackHDC);
-		SceneManager::Render(mBackHDC);
+		Time::Render(mImage->GetHdc());
+		Input::Render(mImage->GetHdc());
+		SceneManager::Render(mImage->GetHdc());
 
 		// 백버퍼에 있는 그림을 원본버퍼에 그려줘야한다.
-		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHDC, 0, 0, SRCCOPY);
+		BitBlt(mHdc, 0, 0, mWidth, mHeight, mImage->GetHdc(), 0, 0, SRCCOPY);
 	}
 
 	void Application::clear()
 	{
 		//HBRUSH grayBrush = CreateSolidBrush(RGB(121, 121, 121));
 		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHDC, blackBrush);
-		Rectangle(mBackHDC, -1, -1, mWidth + 1, mHeight + 1);
-		SelectObject(mBackHDC, oldBrush);
+		HBRUSH oldBrush = (HBRUSH)SelectObject(mImage->GetHdc(), blackBrush);
+		Rectangle(mImage->GetHdc(), -1, -1, mWidth + 1, mHeight + 1);
+		SelectObject(mImage->GetHdc(), oldBrush);
 		DeleteObject(blackBrush);
 	}
 }

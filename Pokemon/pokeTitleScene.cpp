@@ -1,9 +1,10 @@
 #include "pokeTitleScene.h"
 #include "pokeInput.h"
 #include "pokeSceneManager.h"
-#include "pokeBackGround.h"
+#include "pokeAnimBackGround.h"
 #include "pokeTransform.h"
 #include "pokeObject.h"
+#include "pokeAnimator.h"
 
 
 namespace poke
@@ -22,9 +23,13 @@ namespace poke
 	{
 		Scene::Initialize();
 
-		mBg = Object::Instantiate<BackGround>(eLayerType::BG);
-		mBg->SetName(L"TitleImage");
-		mBg->SetImage(L"TitleImage", L"..\\Resources\\TitleScene.bmp");	
+		mAbg = Object::Instantiate<AnimBackGround>(eLayerType::BG);
+		mAbg->GetComponent<Transform>()->SetScale(Vector2{ 3.2f, 3.4f });
+
+		mAnimator = mAbg->AddComponent<Animator>();
+		mAbg->SetAnimator(mAnimator);
+		mAnimator->CreateAnimations(L"..\\Resources\\TitleImage\\", Vector2{ 130.f, 1.0f }, 0.07f);
+		mAnimator->Play(L"TitleImage", true);
 	}
 
 	void TitleScene::Update()

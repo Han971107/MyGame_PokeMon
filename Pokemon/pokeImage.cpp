@@ -35,6 +35,38 @@ namespace poke
 		return image;
 	}
 
+	Image* Image::CreateTexture(const std::wstring& name, UINT width, UINT height)
+	{
+		if (width == 0 || height == 0)
+			return nullptr;
+
+		Image* image = ResourceManager::Find<Image>(name);
+		if (image != nullptr)
+			return image;
+
+		image = new Image();
+		HDC mainHdc = application.GetHdc();
+
+		image->mBitmap = application.GetBackBuffer();
+		image->mHdc = application.GetBackHdc();
+
+		image->mBitmap = CreateCompatibleBitmap(mainHdc, width, height);
+		image->mHdc = CreateCompatibleDC(mainHdc);
+
+		HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
+		DeleteObject(oldBitmap);
+
+		image->mWidth = width;
+		image->mHeight = height;
+
+		image->SetKey(name);
+		ResourceManager::Insert<Image>(name, image);
+
+		Rectangle(image->GetHdc(), -1, -1, image->mWidth + 1, image->mHeight + 1);
+
+		return image;
+	}
+
 	Image::Image()
 		: mBitmap(NULL)
 		, mHdc(NULL)

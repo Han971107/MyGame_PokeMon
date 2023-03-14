@@ -86,6 +86,12 @@
     <Filter Include="02_Contents\Anim_BackGround">
       <UniqueIdentifier>{205d05e0-53ae-4c19-aa4b-507c53fc7e58}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02_Contents\Scene\Base">
+      <UniqueIdentifier>{1797f5f8-e347-4fbf-a99b-9d9998dcecb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Component\Base">
+      <UniqueIdentifier>{b3b85956-17df-481f-9125-6ad5c17cf881}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -115,9 +121,6 @@
     <ClInclude Include="pokeEnums.h">
       <Filter>01_Engine\header</Filter>
     </ClInclude>
-    <ClInclude Include="pokeScene.h">
-      <Filter>02_Contents\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="pokeSceneManager.h">
       <Filter>02_Contents\Scene\SceneManager</Filter>
     </ClInclude>
@@ -132,9 +135,6 @@
     </ClInclude>
     <ClInclude Include="pokeHomeScene.h">
       <Filter>02_Contents\Scene\HomeScene</Filter>
-    </ClInclude>
-    <ClInclude Include="pokeComponent.h">
-      <Filter>03_Component</Filter>
     </ClInclude>
     <ClInclude Include="pokeTime.h">
       <Filter>01_Engine\Time</Filter>
@@ -187,7 +187,15 @@
     <ClInclude Include="pokePlayScene.h">
       <Filter>02_Contents\Scene\PlayScene</Filter>
     </ClInclude>
-    <ClInclude Include="pokeAnimBackGround.h" />
+    <ClInclude Include="pokeAnimBackGround.h">
+      <Filter>02_Contents\Anim_BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeScene.h">
+      <Filter>02_Contents\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="pokeComponent.h">
+      <Filter>03_Component\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokeApplication.cpp">
@@ -198,9 +206,6 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>00_main</Filter>
-    </ClCompile>
-    <ClCompile Include="pokeScene.cpp">
-      <Filter>02_Contents\Scene</Filter>
     </ClCompile>
     <ClCompile Include="pokeSceneManager.cpp">
       <Filter>02_Contents\Scene\SceneManager</Filter>
@@ -216,9 +221,6 @@
     </ClCompile>
     <ClCompile Include="pokeHomeScene.cpp">
       <Filter>02_Contents\Scene\HomeScene</Filter>
-    </ClCompile>
-    <ClCompile Include="pokeComponent.cpp">
-      <Filter>03_Component</Filter>
     </ClCompile>
     <ClCompile Include="pokeTime.cpp">
       <Filter>01_Engine\Time</Filter>
@@ -268,7 +270,15 @@
     <ClCompile Include="pokePlayScene.cpp">
       <Filter>02_Contents\Scene\PlayScene</Filter>
     </ClCompile>
-    <ClCompile Include="pokeAnimBackGround.cpp" />
+    <ClCompile Include="pokeAnimBackGround.cpp">
+      <Filter>02_Contents\Anim_BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeScene.cpp">
+      <Filter>02_Contents\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="pokeComponent.cpp">
+      <Filter>03_Component\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pokemon.rc">

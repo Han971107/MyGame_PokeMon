@@ -37,10 +37,11 @@ namespace poke
 		mDoorCollider->SetColliderName(L"PlaySceneDoor");
 
 		mRed = Object::Instantiate<Red>(Vector2{ 170.0f, 250.0f }, eLayerType::Player);
-		mRed->SetName(L"Player");
+		mRed->SetName(L"Red");
 
+		
 		// 카메라 타겟을 플레이어로 고정
-		//Camera::SetTarget(mRed);
+		Camera::SetTarget(mRed);
 
 		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);	
 	}
@@ -51,7 +52,7 @@ namespace poke
 	}
 
 	void HomeScene::Render(HDC hdc)
-	{
+	{	
 		Scene::Render(hdc);
 	}
 
@@ -62,13 +63,12 @@ namespace poke
 
 	void HomeScene::OnEnter()
 	{
-		mRed->GetComponent<Animator>()->Play(L"ForwardIdle", false);
-		mRed->SetRedState(poke::Red::eRedState::Idle);
-		CollisionManager::SetLayer(eLayerType::Player, eLayerType::BG, true);
+		
 	}
 
 	void HomeScene::OnExit()
 	{
-		mRed->GetComponent<Transform>()->SetPos(Vector2{ 170.0f, 250.0f });
+		
 	}
+
 }

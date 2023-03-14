@@ -1,6 +1,7 @@
 #include "pokeAnimBackGround.h"
 #include "pokeTransform.h"
 #include "pokeAnimator.h"
+#include "pokeSceneManager.h"
 
 namespace poke
 {
@@ -37,5 +38,16 @@ namespace poke
 	void AnimBackGround::SetImage(const std::wstring& key, const std::wstring& path)
 	{
 		mImage = ResourceManager::Load<Image>(key, path);
+	}
+
+	void AnimBackGround::CallIntroAnimCompleteEvent()
+	{
+		//mAnimator->GetCompleteEvent(L"IntroImage") = std::bind(&AnimBackGround::introAnimCompleteEvent, this);
+		introAnimCompleteEvent();
+	}
+
+	void AnimBackGround::introAnimCompleteEvent()
+	{
+		SceneManager::LoadScene(eSceneType::Title);
 	}
 }

@@ -33,7 +33,7 @@ namespace poke
 			scene->Initialize();
 		}
 
-		mActiveScene = mScenes[(UINT)eSceneType::Home];
+		mActiveScene = mScenes[(UINT)eSceneType::Intro];
 	}
 
 	void SceneManager::Update()

@@ -4,6 +4,8 @@
 
 namespace poke
 {
+	class Image;
+
 	class Application
 	{
 	public:
@@ -21,6 +23,9 @@ namespace poke
 		UINT GetWidth() { return mWidth; }
 		UINT GetHeight() { return mHeight; }
 
+		HBITMAP GetBackBuffer() { return mBackBuffer; }
+		HDC GetBackHdc() { return mBackHDC; }
+
 	private:
 		void clear();
 
@@ -29,6 +34,8 @@ namespace poke
 		HDC mHdc;
 
 		//¹é¹öÆÛ
+		Image* mImage;
+
 		HBITMAP mBackBuffer;
 		HDC mBackHDC;
 

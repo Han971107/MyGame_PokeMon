@@ -7,6 +7,7 @@ namespace poke
     {
 	public:	
 		static Image* CreateEmptySpriteSheet(const std::wstring& name, UINT width, UINT height);
+		static Image* CreateTexture(const std::wstring& name, UINT width, UINT height);
 
 		Image();
 		virtual ~Image();
