@@ -45,19 +45,21 @@ namespace poke
 			return image;
 
 		image = new Image();
+		image->mWidth = width;
+		image->mHeight = height;
+
 		HDC mainHdc = application.GetHdc();
 
+		//------------------------------------------------------------------
+		// 원본 백버퍼와, 비트맵 정보를 가져온다
 		image->mBitmap = application.GetBackBuffer();
 		image->mHdc = application.GetBackHdc();
-
 		image->mBitmap = CreateCompatibleBitmap(mainHdc, width, height);
 		image->mHdc = CreateCompatibleDC(mainHdc);
+		//------------------------------------------------------------------
 
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
 		DeleteObject(oldBitmap);
-
-		image->mWidth = width;
-		image->mHeight = height;
 
 		image->SetKey(name);
 		ResourceManager::Insert<Image>(name, image);
