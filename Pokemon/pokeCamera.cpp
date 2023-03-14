@@ -18,6 +18,7 @@ namespace poke
 
 	void Camera::Initialize()
 	{
+		// 카메라 초기값 오류 수정
 		mResolution.x = application.GetWidth();
 		mResolution.y = application.GetHeight();
 		mLookPosition = (mResolution / 2.0f);
