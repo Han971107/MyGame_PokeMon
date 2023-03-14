@@ -34,6 +34,7 @@ namespace poke
 
 		mDistance = mLookPosition - (mResolution / 2.0f);
 	}
+
 	void Camera::Clear()
 	{
 		mResolution.x = application.GetWidth();

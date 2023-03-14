@@ -46,7 +46,7 @@ namespace poke
 
 		// Play
 		//mAnimator->GetCompleteEvent(L"ForwardIdle") = std::bind(&Red::idleCompleteEvent, this);
-		mAnimator->Play(L"ForwardIdle", true);
+		mAnimator->RedPlay(L"ForwardIdle", true);
 
 
 		GameObject::Initialize();
@@ -125,17 +125,17 @@ namespace poke
 
 		if (Input::GetKeyHold(eKeyCode::LEFT))
 		{
-			mAnimator->Play(L"LeftRun", true);
+			mAnimator->RedPlay(L"LeftRun", true);
 			pos.x -= 120.0f * Time::DeltaTime();
 		}
 		if (Input::GetKeyUp(eKeyCode::LEFT)) {
 			mState = eRedState::Idle;
-			mAnimator->Play(L"LeftIdle", false);
+			mAnimator->RedPlay(L"LeftIdle", false);
 		}
 
 		if (Input::GetKeyDown(eKeyCode::DOWN)) {
 			mState = eRedState::move_Down;
-			mAnimator->Play(L"ForwardRun", true);
+			mAnimator->RedPlay(L"ForwardRun", true);
 		}
 
 		tr->SetPos(pos);
@@ -148,22 +148,22 @@ namespace poke
 
 		if (Input::GetKeyHold(eKeyCode::RIGHT))
 		{
-			mAnimator->Play(L"RightRun", true);
+			mAnimator->RedPlay(L"RightRun", true);
 			pos.x += 120.0f * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::RIGHT)) {
 			mState = eRedState::Idle;
-			mAnimator->Play(L"RightIdle", false);
+			mAnimator->RedPlay(L"RightIdle", false);
 		}
 
 		if (Input::GetKeyDown(eKeyCode::LEFT)) {
 			mState = eRedState::move_Left;
-			mAnimator->Play(L"LeftRun", true);
+			mAnimator->RedPlay(L"LeftRun", true);
 		}
 
 		if (Input::GetKeyDown(eKeyCode::DOWN)) {
 			mState = eRedState::move_Down;
-			mAnimator->Play(L"ForwardRun", true);
+			mAnimator->RedPlay(L"ForwardRun", true);
 		}
 
 		tr->SetPos(pos);
@@ -176,17 +176,17 @@ namespace poke
 
 		if (Input::GetKeyHold(eKeyCode::UP))
 		{
-			mAnimator->Play(L"BackRun", true);
+			mAnimator->RedPlay(L"BackRun", true);
 			pos.y -= 120.0f * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::UP)) {
 			mState = eRedState::Idle;
-			mAnimator->Play(L"BackIdle", false);
+			mAnimator->RedPlay(L"BackIdle", false);
 		}
 
 		if (Input::GetKeyDown(eKeyCode::DOWN)) {
 			mState = eRedState::move_Down;
-			mAnimator->Play(L"ForwardRun", true);
+			mAnimator->RedPlay(L"ForwardRun", true);
 		}
 
 		tr->SetPos(pos);
@@ -199,12 +199,12 @@ namespace poke
 
 		if (Input::GetKeyHold(eKeyCode::DOWN))
 		{
-			mAnimator->Play(L"ForwardRun", true);
+			mAnimator->RedPlay(L"ForwardRun", true);
 			pos.y += 120.0f * Time::DeltaTime();
 		}
 		else if (Input::GetKeyUp(eKeyCode::DOWN)) {
 			mState = eRedState::Idle;
-			mAnimator->Play(L"ForwardIdle", false);
+			mAnimator->RedPlay(L"ForwardIdle", false);
 		}
 
 		tr->SetPos(pos);
