@@ -30,6 +30,7 @@ namespace poke
          
     private:
         static UINT ColliderNumber;
+        UINT mCollisionCount;
         std::wstring mColliderName;
         UINT mID;
         Vector2 mCenter;
